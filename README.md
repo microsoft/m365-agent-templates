@@ -1,3 +1,6 @@
+<!-- view-tracking-badge -->
+[![Views](https://hits.sh/github.com/microsoft/m365-agent-templates.svg?label=views&color=0078D4)](https://hits.sh/github.com/microsoft/m365-agent-templates/)
+
 # Project
 
 > This repo has been populated by an initial template to help get you started. Please
