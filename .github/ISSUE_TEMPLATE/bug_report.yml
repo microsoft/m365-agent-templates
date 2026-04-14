@@ -1,0 +1,64 @@
+name: "\U0001F41B Bug Report"
+description: "Report an issue with an agent template"
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: agent
+    attributes:
+      label: "Which agent is affected?"
+      options:
+        - Plan My Day
+        - My Company Policy
+        - Executive Briefing
+        - Request Tracker
+        - Know My Customer
+    validations:
+      required: true
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: "How did you deploy the agent?"
+      options:
+        - "Option A — Import Package (sideload/Teams)"
+        - "Option B — Build from scratch (Agent Builder/Copilot Studio)"
+        - "Option C — Clone & Deploy (VS Code)"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the bug"
+      description: "A clear description of what happened vs. what you expected."
+      placeholder: "When I ask the agent '...', it responds with '...' instead of '...'."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to reproduce"
+      description: "Step-by-step instructions to reproduce the issue."
+      placeholder: |
+        1. Open the agent in Teams
+        2. Type "..."
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: "Environment"
+      description: "Any relevant environment details."
+      placeholder: |
+        - M365 license type: E5
+        - Teams client: Desktop / Web
+        - Browser (if web): Edge 125
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots"
+      description: "If applicable, add screenshots to help explain the problem."
+    validations:
+      required: false
