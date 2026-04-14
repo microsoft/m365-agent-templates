@@ -2,8 +2,6 @@
   <img src="social-preview.png" alt="Microsoft 365 Agent Templates" width="100%">
 </p>
 
-<h1 align="center">Microsoft 365 Agent Templates</h1>
-
 <p align="center">
   <strong>Pre-built, deploy-ready AI agents for Microsoft 365</strong><br>
   Built by the <a href="https://developer.microsoft.com/copilot">Copilot Acceleration Team (CAT)</a> at Microsoft
