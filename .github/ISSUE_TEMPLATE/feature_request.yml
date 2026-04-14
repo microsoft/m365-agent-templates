@@ -1,0 +1,40 @@
+name: "\U0001F4A1 Feature Request"
+description: "Suggest an improvement or new capability for an agent template"
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: agent
+    attributes:
+      label: "Which agent does this apply to?"
+      options:
+        - Plan My Day
+        - My Company Policy
+        - Executive Briefing
+        - Request Tracker
+        - Know My Customer
+        - New agent idea
+        - General / all agents
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: "What problem does this solve?"
+      description: "Describe the gap or pain point this feature would address."
+      placeholder: "I often need to ... but the agent currently doesn't ..."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Describe your proposed solution"
+      description: "How would you like this to work?"
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives considered"
+      description: "Any workarounds or alternative approaches you've thought of."
+    validations:
+      required: false
