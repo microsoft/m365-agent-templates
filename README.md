@@ -76,7 +76,7 @@ Prepares comprehensive executive briefings by synthesizing meeting context, atte
 </td>
 <td>
 
-### 🔜 Request Tracker *(Coming Soon)*
+### [Request Tracker](Request%20Tracker/)
 Provides a single, intelligent conversational interface to submit, track, escalate, and resolve internal requests across departments. Includes Power Automate workflows for approvals, notifications, nudges, and digests with clear visibility for team leads and managers.
 
 </td>
@@ -87,7 +87,7 @@ Provides a single, intelligent conversational interface to submit, track, escala
 </td>
 <td>
 
-### 🔜 Know My Customer *(Coming Soon)*
+### [Know My Customer](Know%20My%20Customer/)
 Surfaces a 360° customer profile by pulling together CRM data, meeting history, email threads, and relevant documents — helping sellers and account managers walk into every conversation fully prepared.
 
 </td>
@@ -128,14 +128,6 @@ Found a bug? Have an idea for an improvement? We'd love to hear from you!
 - 💡 [**Request a Feature**](https://github.com/microsoft/m365-agent-templates/issues/new?template=feature_request.yml) — Suggest an improvement or new capability
 
 ---
-
-## 🤝 Contributing
-
-This project welcomes contributions and suggestions. Most contributions require you to agree to a [Contributor License Agreement (CLA)](https://cla.opensource.microsoft.com) declaring that you have the right to, and actually do, grant us the rights to use your contribution.
-
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately. Simply follow the instructions provided by the bot.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## ⚖️ Trademarks
 
