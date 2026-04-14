@@ -1,0 +1,13 @@
+Question,Expected response,Testing method
+"I want to add something","The agent should ask a clarifying question about what the user wants to do, such as whether they want to create a new request, update an existing one, or search for requests.",Compare meaning
+"I need help with a request","The agent should ask a clarifying question about what kind of help the user needs, such as creating, updating, searching, or viewing a request.",Compare meaning
+"request","The agent should ask the user to clarify what they want to do with requests, since a single word is too ambiguous to determine intent.",Compare meaning
+"Add some data to the tracker","The agent should ask a clarifying question to determine whether the user wants to create a single new request or load bulk sample data.",Compare meaning
+"Show me all requests with status New","The agent should search for and display requests with status New. It should not create a new request despite the word new appearing in the input.",Compare meaning
+"Has anything changed on the blocked requests?","The agent should search for blocked requests and report their current status. It should not trigger the update flow despite the word changed in the input.",Compare meaning
+"What's the weather like today?","The agent should politely explain that it cannot help with weather queries and redirect the user to its request management capabilities.",Compare meaning
+"asdfghjkl","The agent should indicate it did not understand the input and ask the user to rephrase or explain what they need help with.",Compare meaning
+"Add a new request for printer maintenance","The agent should present a new request creation form. It should not trigger the sample data topic even though the word add is used.",Compare meaning
+"Add a request to review the test results from QA","The agent should present a new request creation form about reviewing QA test results. It should not trigger the sample data topic despite test results being mentioned.",Compare meaning
+"Tell me about yourself","The agent should describe itself as the Request Tracker Assistant and explain its capabilities including search, create, update, and reporting for request management.",Compare meaning
+"Can I delete a request?","The agent should explain that it does not support deleting requests and suggest alternative actions it can help with.",Compare meaning

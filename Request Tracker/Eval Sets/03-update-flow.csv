@@ -1,0 +1,11 @@
+Question,Expected response,Testing method
+"Update the server migration request priority to Critical","The agent searches for the server migration request and presents an update form so the user can change the priority to Critical.",Compare meaning
+"Edit the budget review request","The agent asks for search keywords or searches for the budget review request to present an update form.",Compare meaning
+"Change the priority of the swag giveaway request to High","The agent finds the swag giveaway request and shows an update form pre-populated with current values so the user can change the priority.",Compare meaning
+"Modify the new hire orientation request to change the due date","The agent searches for the new hire orientation request and presents a pre-populated update form so the user can edit the due date.",Compare meaning
+"I want to update a request","The agent asks which request the user would like to update by requesting keywords or a title to search for.",Compare meaning
+"Mark request about conference room setup as completed","The agent finds the conference room setup request and shows an update form so the user can change its status to Completed.",Compare meaning
+"Reassign the data backup request to the infrastructure team","The agent searches for the data backup request and presents an update form pre-populated with current values for the user to change the Assigned To field.",Compare meaning
+"Update Finalize speaker lineup","The agent searches for the Finalize speaker lineup request directly without asking for search keywords since the item name was already provided.",Compare meaning
+"Change the description of the security audit request","The agent finds the security audit request and presents an update form pre-populated with the current description so the user can modify it.",Compare meaning
+"I need to modify an existing request about the holiday party planning","The agent searches for the holiday party planning request and presents a pre-populated update form.",Compare meaning

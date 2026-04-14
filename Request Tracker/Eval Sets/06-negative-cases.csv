@@ -1,0 +1,13 @@
+Question,Expected response,Testing method
+"Update the server migration request priority to Critical","The agent should search for and present the server migration request for editing. It must not create a new request.",Compare meaning
+"Create a brand new request for security audit","The agent should present a new request creation form for the security audit. It must not search for or try to update an existing request.",Compare meaning
+"Search for all requests about server migration","The agent should return search results about server migration requests. It must not create a new request or start an update flow.",Compare meaning
+"Find all requests assigned to Marcus Chen","The agent should search and display requests assigned to Marcus Chen. It must not trigger the update or create flow.",Compare meaning
+"Add a new request for budget review","The agent should present a new request creation form for budget review. It must not trigger the sample data loading topic.",Compare meaning
+"I need to add a record for the new hire orientation","The agent should present a new request creation form for new hire orientation. It must not trigger sample data loading.",Compare meaning
+"List all new requests","The agent should return a list of requests with the status New from the knowledge source. It must not create a new request.",Compare meaning
+"How many requests are there in total?","The agent should provide a count of all requests. It must not trigger any action topic like create, update, or sample data.",Compare meaning
+"Modify the new hire orientation request to change the due date","The agent should search for and update the new hire orientation request. It must not create a new request despite the word new in the title.",Compare meaning
+"Show me all requests","title status priority requestor assigned due",Keyword match
+"What's the status of the server migration request?","New In Progress Blocked Completed Low Medium High Critical",Keyword match
+"Show me all requests","The agent must display request records using friendly display names like Title, Status, Priority, and Assigned To. It must not expose internal column names or technical identifiers.",Compare meaning

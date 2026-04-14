@@ -1,0 +1,16 @@
+Question,Expected response,Testing method
+"Show me all requests","status priority assigned",Keyword match
+"What are the high priority requests?","high priority",Keyword match
+"List all blocked requests","blocked status",Keyword match
+"What requests are assigned to Marcus Chen?","Marcus Chen assigned",Keyword match
+"How many requests are in progress right now?","The agent provides a count or summary of requests that currently have the In Progress status.",Compare meaning
+"Find the request about the conference room booking","conference room",Keyword match
+"Show me all critical requests that are blocked and due this week","The agent filters and displays requests matching critical priority and blocked status with due dates within the current week.",Compare meaning
+"Give me a breakdown of requests by status","The agent provides a summary or count of requests grouped by status: New, In Progress, Blocked, and Completed.",Compare meaning
+"Query all requests submitted this month","The agent returns requests filtered by submission date within the current month.",Compare meaning
+"Are there any overdue requests?","The agent checks request due dates against today's date and reports any requests that are past their due date.",Compare meaning
+"What is the status of the server migration request?","The agent returns the current status and details of the server migration request from the knowledge source.",Compare meaning
+"Show me all requests due this week","due date",Keyword match
+"How many high priority requests are currently blocked?","The agent provides a count of requests that have both high priority and blocked status.",Compare meaning
+"Who has the most requests assigned to them?","The agent summarizes request assignments and identifies the person or team with the most assigned requests.",Compare meaning
+"List all completed requests from last month","The agent returns requests with completed status that were completed or submitted during the previous month.",Compare meaning

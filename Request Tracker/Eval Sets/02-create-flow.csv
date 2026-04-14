@@ -1,0 +1,11 @@
+Question,Expected response,Testing method
+"Create a new request for security camera installation","title description priority status",Keyword match
+"I need to submit a request for onboarding a new team member","title description priority",Keyword match
+"Create a high priority request titled Server Migration about migrating the legacy database to Azure","The agent should present a request creation form with the title pre-populated as Server Migration and the description about migrating the legacy database to Azure.",Compare meaning
+"Add a request for printer maintenance in building 3","The agent should present an adaptive card form with title and description fields pre-populated based on the user's input about printer maintenance in building 3.",Compare meaning
+"File a new request","The agent should present a blank request creation form with fields for title, description, priority, status, assigned to, and due date.",Compare meaning
+"I want to create a request about the quarterly budget review process","budget review quarterly",Keyword match
+"New request for upgrading the Wi-Fi infrastructure across all floors","The agent should show a creation form with title and description extracted from the user input about Wi-Fi infrastructure upgrade.",Compare meaning
+"Can you help me submit a request for additional office supplies?","The agent should present a new request form with office supplies context pre-populated in the title or description fields.",Compare meaning
+"Create a critical request for data center outage recovery","The agent should present a request creation form with data center outage recovery context extracted into the title and description.",Compare meaning
+"I need to add a new request for employee training on the new CRM system","The agent should show an adaptive card form pre-populated with a title and description about employee training on the new CRM system.",Compare meaning

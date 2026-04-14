@@ -1,0 +1,21 @@
+Question,Expected response,Testing method
+"Create a new request","The agent presents a form or adaptive card to create a new request with fields for title, description, priority, status, assigned to, and due date.",Compare meaning
+"I need to submit a new request for laptop replacement","The agent shows a request creation form pre-populated with laptop replacement as the title or description.",Compare meaning
+"Add a request for booking the conference room for Q4 planning","The agent shows a request creation form with conference room booking and Q4 planning context extracted into the title and description.",Compare meaning
+"I want to file a request","The agent presents a new request creation form for the user to fill out.",Compare meaning
+"New request please","The agent opens a new request form for the user to complete.",Compare meaning
+"Update an existing request","The agent asks which request to update or presents a search to find the existing request.",Compare meaning
+"I need to edit a request","The agent asks for keywords to search for the request the user wants to edit.",Compare meaning
+"Change the status of a request","The agent initiates the update flow and asks which request the user wants to change the status of.",Compare meaning
+"Reassign the server migration request to Sarah","The agent searches for the server migration request and presents an update form to reassign it.",Compare meaning
+"Mark the laptop replacement request as completed","The agent searches for the laptop replacement request and shows an update form pre-filled with current values so the user can mark it as completed.",Compare meaning
+"Show me all requests","The agent displays a list of requests from the tracker with details like title, status, priority, assigned to, and due date.",Compare meaning
+"What are the high priority requests?","The agent searches the knowledge source and returns requests filtered by high priority with their details.",Compare meaning
+"List all blocked requests","The agent returns a list of requests with blocked status from the knowledge source.",Compare meaning
+"How many requests are in progress right now?","The agent provides a count or summary of requests currently in the In Progress status.",Compare meaning
+"Give me a breakdown of requests by status","The agent summarizes or groups requests by their status categories: New, In Progress, Blocked, and Completed.",Compare meaning
+"Populate sample data","The agent asks for confirmation before loading bulk sample or test data into the Request Tracker table.",Compare meaning
+"Load test data into the tracker","The agent initiates the sample data loading process and asks for user confirmation.",Compare meaning
+"Add sample records for demo purposes","The agent asks if the user wants to populate sample data into the request tracker for demo or testing purposes.",Compare meaning
+"Hey can you help me with something?","The agent responds helpfully and explains its capabilities: searching requests, creating new requests, updating existing requests, and providing summaries.",Compare meaning
+"What can you do?","The agent describes its capabilities including searching and querying requests, creating new requests, updating existing requests, and providing summaries and reports.",Compare meaning
