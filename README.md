@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="social-preview.png" alt="Microsoft 365 Agent Templates" width="100%">
+</p>
+
 <h1 align="center">Microsoft 365 Agent Templates</h1>
 
 <p align="center">
