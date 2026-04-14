@@ -58,7 +58,7 @@ Instead of manually hunting through intranet sites, HR portals, and internal doc
 
 ## ✅ Prerequisites
 
-1. **Microsoft 365 Copilot License** — Required for all users interacting with the agent and to access SharePoint knowledge sources
+1. **Microsoft 365 Copilot License or Metered Billing** — A per-user Microsoft 365 Copilot license **or** Copilot Studio metered billing enabled on the tenant is required for full agent capabilities, including SharePoint-grounded answers
 2. **Microsoft 365 E3, E5, or Business Premium** — Base subscription for Microsoft 365 services
 3. **Sideloading Enabled in Teams** — A Teams admin must enable **Upload custom apps** in the Teams Admin Center under **Setup Policies > Global** (required for Option A only)
 4. **Microsoft Teams** — Desktop or web client to access the agent
