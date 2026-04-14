@@ -9,6 +9,11 @@
 
 [![Microsoft 365 Copilot](https://img.shields.io/badge/Microsoft_365-Copilot-0078D4?logo=microsoft&logoColor=white)](https://www.microsoft.com/microsoft-365/copilot)
 [![Copilot Studio](https://img.shields.io/badge/Copilot_Studio-Agent-6264A7?logo=microsoft&logoColor=white)](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-what-is-copilot-studio)
+[![Plan My Day](https://img.shields.io/badge/Plan_My_Day-DA-28A8EA?logo=microsoft&logoColor=white)](Plan%20My%20Day/)
+[![My Company Policy](https://img.shields.io/badge/My_Company_Policy-DA-28A8EA?logo=microsoft&logoColor=white)](My%20Company%20Policy/)
+[![Executive Briefing](https://img.shields.io/badge/Executive_Briefing-DA-28A8EA?logo=microsoft&logoColor=white)](Executive%20Briefing/)
+[![Request Tracker](https://img.shields.io/badge/Request_Tracker-CA-6264A7?logo=microsoft&logoColor=white)](Request%20Tracker/)
+[![Know My Customer](https://img.shields.io/badge/Know_My_Customer-DA-28A8EA?logo=microsoft&logoColor=white)](Know%20My%20Customer/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
