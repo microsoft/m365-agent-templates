@@ -1,4 +1,8 @@
-# 👩‍💼 Executive Briefing Agent
+<p align="center">
+  <img src="Executive_Briefing_Icon.png" alt="Executive Briefing Agent" width="120">
+</p>
+
+<h1 align="center">Executive Briefing Agent</h1>
 
 > **Your AI-powered executive prep partner** — generate polished briefings, talking points, and post-meeting summaries in seconds, not hours.
 
