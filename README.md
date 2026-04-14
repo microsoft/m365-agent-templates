@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="social-preview.png" alt="Microsoft 365 Agent Templates" width="100%">
+  <img src=".github/social-preview.png" alt="Microsoft 365 Agent Templates" width="100%">
 </p>
 
 <p align="center">
