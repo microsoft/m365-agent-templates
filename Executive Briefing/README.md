@@ -1,4 +1,4 @@
-# 🎙️ Executive Briefing Agent
+# 👩‍💼 Executive Briefing Agent
 
 > **Your AI-powered executive prep partner** — generate polished briefings, talking points, and post-meeting summaries in seconds, not hours.
 
