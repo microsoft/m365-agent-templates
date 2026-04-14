@@ -13,7 +13,7 @@
 [![My Company Policy](https://img.shields.io/badge/My_Company_Policy-DA-28A8EA?logo=microsoft&logoColor=white)](My%20Company%20Policy/)
 [![Executive Briefing](https://img.shields.io/badge/Executive_Briefing-DA-28A8EA?logo=microsoft&logoColor=white)](Executive%20Briefing/)
 [![Request Tracker](https://img.shields.io/badge/Request_Tracker-CA-6264A7?logo=microsoft&logoColor=white)](Request%20Tracker/)
-[![Know My Customer](https://img.shields.io/badge/Know_My_Customer-DA-28A8EA?logo=microsoft&logoColor=white)](Know%20My%20Customer/)
+[![Know My Customer](https://img.shields.io/badge/Know_My_Customer-CA-6264A7?logo=microsoft&logoColor=white)](Know%20My%20Customer/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
