@@ -8,6 +8,7 @@
 
 [![Microsoft 365 Copilot](https://img.shields.io/badge/Microsoft_365-Copilot-0078D4?logo=microsoft&logoColor=white)](https://www.microsoft.com/microsoft-365/copilot)
 [![Agent Type](https://img.shields.io/badge/Agent_Type-Custom_(Copilot_Studio)-742774?logo=microsoft&logoColor=white)](https://copilotstudio.microsoft.com)
+[![Power Platform](https://img.shields.io/badge/Power_Platform-Solution-0B556A?logo=microsoft&logoColor=white)](https://make.powerapps.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
