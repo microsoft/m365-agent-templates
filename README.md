@@ -3,8 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>Pre-built, deploy-ready AI agents for Microsoft 365</strong><br>
-  Built by the <a href="https://developer.microsoft.com/copilot">Copilot Acceleration Team (CAT)</a> at Microsoft
+  <strong>Pre-built, deploy-ready AI agents for Microsoft 365</strong>
 </p>
 
 [![Microsoft 365 Copilot](https://img.shields.io/badge/Microsoft_365-Copilot-0078D4?logo=microsoft&logoColor=white)](https://www.microsoft.com/microsoft-365/copilot)
