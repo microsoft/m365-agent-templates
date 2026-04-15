@@ -192,31 +192,28 @@
     }
 
     .hero-pills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .hero-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 22px;
+      gap: 0;
+      padding: 10px 28px;
       background: var(--pill-bg);
       border: 1px solid var(--pill-border);
       border-radius: 999px;
       font-size: 0.95rem;
       font-weight: 500;
       color: var(--white-soft);
-      transition: all 0.25s;
-      text-decoration: none;
     }
 
-    .hero-pill:hover {
-      background: rgba(255,255,255,0.14);
-      border-color: rgba(255,255,255,0.35);
-      transform: translateY(-1px);
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-pill-divider {
+      margin: 0 16px;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.6rem;
     }
 
     /* ── Section Headings ────────────────────────────────── */
@@ -785,9 +782,11 @@
     <h1>M365 <span class="accent">Agent Templates</span></h1>
     <p class="hero-sub" style="white-space: nowrap;">Ready-to-deploy agent templates for Microsoft 365 Copilot &amp; Copilot Studio.</p>
     <div class="hero-pills">
-      <a href="#agents" class="hero-pill">📦 Download &amp; Import</a>
-      <a href="#agents" class="hero-pill">🚀 Pre-Built Agents</a>
-      <a href="#agents" class="hero-pill">📖 Setup Guides Included</a>
+      <span class="hero-pill">📦 Download &amp; Import</span>
+      <span class="hero-pill-divider">●</span>
+      <span class="hero-pill">🚀 Pre-Built Agents</span>
+      <span class="hero-pill-divider">●</span>
+      <span class="hero-pill">📖 Setup Guides Included</span>
     </div>
   </section>
 
