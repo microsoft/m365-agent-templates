@@ -5,7 +5,6 @@
 </p>
 
 <p align="center">
-  <strong>Pre-built, deploy-ready AI agents for Microsoft 365</strong><br>
   Built by the Copilot Agents &amp; Platform Experiences (CAPE) team at Microsoft
 </p>
 
