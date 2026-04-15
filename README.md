@@ -1,5 +1,7 @@
 <p align="center">
-  <img src=".github/social-preview.png" alt="Microsoft 365 Agent Templates" width="100%">
+  <a href="https://github.com/microsoft/m365-agent-templates#readme">
+    <img src=".github/social-preview.png" alt="Microsoft 365 Agent Templates" width="100%">
+  </a>
 </p>
 
 <p align="center">
