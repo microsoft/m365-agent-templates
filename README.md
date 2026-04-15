@@ -1,4 +1,3 @@
-<a id="top"></a>
 <p align="center">
   <img src=".github/social-preview.png" alt="Microsoft 365 Agent Templates" width="100%">
 </p>

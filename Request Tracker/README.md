@@ -1,4 +1,4 @@
-[← Back to Agent Templates](https://github.com/microsoft/m365-agent-templates#top)
+[← Back to Agent Templates](https://github.com/microsoft/m365-agent-templates#readme)
 
 <h1 align="center">
   <img src="Request%20Tracker%20Icon.png" alt="" width="48">&nbsp;&nbsp;Request Tracker Agent
