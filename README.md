@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  Built by the Copilot Agents &amp; Platform Experiences (CAPE) team at Microsoft
+  Built by the Copilot Agents &amp; Platform Ecosystem (CAPE) team at Microsoft
 </p>
 
 ---
