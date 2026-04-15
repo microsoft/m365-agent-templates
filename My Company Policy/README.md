@@ -1,8 +1,6 @@
-<p align="center">
-  <img src="My Company Policy Icon.png" alt="My Company Policy Agent" width="120">
-</p>
-
-<h1 align="center">My Company Policy Agent</h1>
+<h1 align="center">
+  <img src="My Company Policy Icon.png" alt="" width="48">&nbsp;&nbsp;My Company Policy Agent
+</h1>
 
 [![Microsoft 365 Copilot](https://img.shields.io/badge/Microsoft_365-Copilot-0078D4?logo=microsoft&logoColor=white)](https://www.microsoft.com/microsoft-365/copilot)
 [![Declarative Agent](https://img.shields.io/badge/Agent_Type-Declarative-6264A7?logo=microsoft-teams&logoColor=white)](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent)

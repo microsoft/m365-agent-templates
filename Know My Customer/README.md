@@ -1,8 +1,6 @@
-<p align="center">
-  <img src="Know%20My%20Customer%20Icon.png" alt="Know My Customer Agent" width="120">
-</p>
-
-<h1 align="center">Know My Customer Agent</h1>
+<h1 align="center">
+  <img src="Know%20My%20Customer%20Icon.png" alt="" width="48">&nbsp;&nbsp;Know My Customer Agent
+</h1>
 
 > **Your competitive intelligence co-pilot** — research companies, analyze competitor landscapes, and generate executive-ready briefings from a simple chat conversation.
 

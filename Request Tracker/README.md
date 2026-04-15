@@ -1,8 +1,6 @@
-<p align="center">
-  <img src="Request%20Tracker%20Icon.png" alt="Request Tracker Agent" width="120">
-</p>
-
-<h1 align="center">Request Tracker Agent</h1>
+<h1 align="center">
+  <img src="Request%20Tracker%20Icon.png" alt="" width="48">&nbsp;&nbsp;Request Tracker Agent
+</h1>
 
 > **Your team's single pane of glass for internal requests** — submit, track, escalate, and resolve requests across departments through a conversational interface in Microsoft Teams.
 

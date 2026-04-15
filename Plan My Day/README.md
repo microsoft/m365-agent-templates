@@ -1,8 +1,6 @@
-<p align="center">
-  <img src="Plan%20My%20Day%20Icon.png" alt="Plan My Day Agent" width="120">
-</p>
-
-<h1 align="center">Plan My Day Agent</h1>
+<h1 align="center">
+  <img src="Plan%20My%20Day%20Icon.png" alt="" width="48">&nbsp;&nbsp;Plan My Day Agent
+</h1>
 
 > **Your AI-powered morning briefing assistant** — pulls together your calendar, email, Teams, files, and contacts into a single, time‑aware daily briefing so you start every day prepared and focused.
 
