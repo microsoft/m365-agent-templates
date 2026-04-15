@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="40%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#76f4ff"/>
+      <stop offset="50%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Copilot-style swirl — two flowing strokes that intertwine -->
+  <!-- Main swirl (large, flows from bottom-left up and around) -->
+  <path d="M 140,380 C 80,300 100,180 200,130 C 300,80 380,120 370,220 C 360,320 280,340 256,280 C 230,220 280,180 320,200"
+        fill="none" stroke="url(#grad1)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Secondary swirl (smaller, complements the first) -->
+  <path d="M 370,140 C 420,200 400,310 310,360 C 220,410 150,370 160,280 C 170,190 240,175 256,230 C 275,290 230,320 190,300"
+        fill="none" stroke="url(#grad2)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+
+  <!-- Center sparkle dot -->
+  <circle cx="256" cy="256" r="16" fill="#00e5ff" opacity="0.9"/>
+  <circle cx="256" cy="256" r="8" fill="#ffffff"/>
+</svg>
