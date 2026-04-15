@@ -262,11 +262,17 @@
       pointer-events: none;
     }
     .btn-download-agent-all.highlight-pulse {
-      animation: pulse-glow 0.6s ease-in-out 3;
+      animation: pulse-glow 1s ease-in-out 3;
+      box-shadow: 0 0 20px rgba(0,229,255,0.5);
+    }
+    .btn-download-agent-all.highlight-pulse:disabled {
+      opacity: 1 !important;
+      animation: pulse-glow 1s ease-in-out 3;
+      box-shadow: 0 0 20px rgba(0,229,255,0.5);
     }
     @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 2px 12px rgba(0,229,255,0.15); }
-      50% { box-shadow: 0 0 24px rgba(0,229,255,0.7); transform: scale(1.04); }
+      0%, 100% { box-shadow: 0 2px 12px rgba(0,229,255,0.3); }
+      50% { box-shadow: 0 0 32px rgba(0,229,255,0.8), 0 0 48px rgba(0,229,255,0.4); transform: scale(1.04); }
     }
 
     /* ── Anchor glow ring on card ─────────────────────────── */
@@ -1173,11 +1179,14 @@
           card.addEventListener('animationend', () => card.classList.remove('anchor-glow'), { once: true });
         }
         btn.classList.add('highlight-pulse');
-        btn.addEventListener('animationend', () => btn.classList.remove('highlight-pulse'), { once: true });
-        // Auto-trigger the zip download after scroll + glow
+        // Auto-trigger the zip download after scroll + glow is visible
         setTimeout(() => {
           btn.click();
-        }, 800);
+        }, 1500);
+        // Remove glow class after animation completes (3 × 1s = 3s + buffer)
+        setTimeout(() => {
+          btn.classList.remove('highlight-pulse');
+        }, 4500);
       }
       handleDownloadHash();
       window.addEventListener('hashchange', handleDownloadHash);
