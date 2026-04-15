@@ -52,7 +52,7 @@ Each agent folder contains a full **Bill of Materials (BOM)**:
 </td>
 <td>
 
-### [Plan My Day](https://github.com/microsoft/m365-agent-templates/tree/main/Plan%20My%20Day/#plan-my-day-agent)
+### [Plan My Day](https://github.com/microsoft/m365-agent-templates/tree/main/Plan%20My%20Day/#--plan-my-day-agent)
 Compiles a personalized daily briefing from your calendar, email, Teams messages, files, and people signals — so you start every day knowing exactly what to focus on. Delivers a structured output at three depths: 30-Second Glance, 1-Minute Read, and Deep Read.
 
 </td>
@@ -63,7 +63,7 @@ Compiles a personalized daily briefing from your calendar, email, Teams messages
 </td>
 <td>
 
-### [My Company Policy](https://github.com/microsoft/m365-agent-templates/tree/main/My%20Company%20Policy/#my-company-policy-agent)
+### [My Company Policy](https://github.com/microsoft/m365-agent-templates/tree/main/My%20Company%20Policy/#--my-company-policy-agent)
 Gives employees a single, trusted conversational interface to access company policies — HR, benefits, PTO, holidays, IT, procurement, and more. Grounded in your SharePoint policy documents with inline citations and context-aware answers based on user location and role.
 
 </td>
@@ -74,7 +74,7 @@ Gives employees a single, trusted conversational interface to access company pol
 </td>
 <td>
 
-### [Executive Briefing](https://github.com/microsoft/m365-agent-templates/tree/main/Executive%20Briefing/#executive-briefing-agent)
+### [Executive Briefing](https://github.com/microsoft/m365-agent-templates/tree/main/Executive%20Briefing/#--executive-briefing-agent)
 Prepares comprehensive executive briefings by synthesizing meeting context, attendee profiles, strategic priorities, and relevant documents into a single, structured pre-read — turning hours of manual prep into one prompt.
 
 </td>
@@ -85,7 +85,7 @@ Prepares comprehensive executive briefings by synthesizing meeting context, atte
 </td>
 <td>
 
-### [Request Tracker](https://github.com/microsoft/m365-agent-templates/tree/main/Request%20Tracker/#request-tracker-agent)
+### [Request Tracker](https://github.com/microsoft/m365-agent-templates/tree/main/Request%20Tracker/#--request-tracker-agent)
 Provides a single, intelligent conversational interface to submit, track, escalate, and resolve internal requests across departments. Includes Power Automate workflows for approvals, notifications, nudges, and digests with clear visibility for team leads and managers.
 
 </td>
@@ -96,7 +96,7 @@ Provides a single, intelligent conversational interface to submit, track, escala
 </td>
 <td>
 
-### [Know My Customer](https://github.com/microsoft/m365-agent-templates/tree/main/Know%20My%20Customer/#know-my-customer-agent)
+### [Know My Customer](https://github.com/microsoft/m365-agent-templates/tree/main/Know%20My%20Customer/#--know-my-customer-agent)
 Surfaces a 360° customer profile by pulling together CRM data, meeting history, email threads, and relevant documents — helping sellers and account managers walk into every conversation fully prepared.
 
 </td>
