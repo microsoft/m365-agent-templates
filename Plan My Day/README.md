@@ -110,9 +110,12 @@ This is the fastest way to get started. You'll upload the pre-built agent packag
 > 🔴 **Important:** Do not unzip or rename the `.zip` file. Teams needs the original `.zip` as-is.
 
 **Before You Begin:**
-- ☐ Microsoft Teams installed (desktop app or [teams.microsoft.com](https://teams.microsoft.com))
-- ☐ Custom app uploading enabled in Teams (see below)
-- ☐ `PlanMyDay_v1.0.0.0.zip` file downloaded from this repository
+
+| ✓ | What You Need | Why |
+|:-:|:--------------|:----|
+| ☐ | Microsoft Teams installed (desktop app or [teams.microsoft.com](https://teams.microsoft.com)) | The agent is uploaded through the Teams app |
+| ☐ | Custom app uploading enabled in Teams | Your admin must turn this on — see below |
+| ☐ | `PlanMyDay_v1.0.0.0.zip` file downloaded from this repository | The agent package you'll upload |
 
 <details>
 <summary>🔍 How to Check if Custom App Uploading Is Enabled</summary>
@@ -166,7 +169,10 @@ This is the fastest way to get started. You'll upload the pre-built agent packag
 If you can't upload a zip — or prefer to build it yourself — use Agent Builder in Microsoft 365 Copilot. No coding required.
 
 **Before You Begin:**
-- ☐ Access to Agent Builder at [m365.cloud.microsoft/chat](https://m365.cloud.microsoft/chat)
+
+| ✓ | What You Need | Why |
+|:-:|:--------------|:----|
+| ☐ | Access to Agent Builder at [m365.cloud.microsoft/chat](https://m365.cloud.microsoft/chat) | Where you'll build the agent from scratch |
 
 **Open Agent Builder:**
 
@@ -302,9 +308,12 @@ Add three knowledge sources by clicking the icons in the Knowledge section:
 This approach uses Git and Visual Studio Code with the Microsoft 365 Agents Toolkit extension. It's ideal if you prefer version control, want to make deeper customizations, or your organization restricts custom app uploads.
 
 **Before You Begin:**
-- ☐ [Visual Studio Code](https://code.visualstudio.com/Download) installed
-- ☐ [Git](https://git-scm.com/downloads) installed
-- ☐ [M365 Agents Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension) VS Code extension installed
+
+| ✓ | What You Need | Why |
+|:-:|:--------------|:----|
+| ☐ | [Visual Studio Code](https://code.visualstudio.com/Download) installed | Your code editor for this workflow |
+| ☐ | [Git](https://git-scm.com/downloads) installed | Required to clone the agent repository |
+| ☐ | [M365 Agents Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension) VS Code extension installed | VS Code extension for building and deploying M365 agents |
 
 <details>
 <summary>📥 Step-by-step tool installation</summary>

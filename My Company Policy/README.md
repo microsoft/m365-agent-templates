@@ -110,10 +110,13 @@ This is the fastest way to get started. You'll configure the agent package with 
 > 🔴 **Important:** The agent package includes a **placeholder SharePoint URL** that you must replace before uploading. See the configuration steps below.
 
 **Before You Begin:**
-- ☐ Microsoft Teams installed (desktop app or [teams.microsoft.com](https://teams.microsoft.com))
-- ☐ Custom app uploading enabled in Teams ([how to check](#how-to-check-if-custom-app-uploading-is-enabled))
-- ☐ `MyCompanyPolicy_1_0_0_0.zip` file downloaded from this repository
-- ☐ Your SharePoint site URL containing company policy documents
+
+| ✓ | What You Need | Why |
+|:-:|:--------------|:----|
+| ☐ | Microsoft Teams installed (desktop app or [teams.microsoft.com](https://teams.microsoft.com)) | The agent is uploaded through the Teams app |
+| ☐ | Custom app uploading enabled in Teams ([how to check](#how-to-check-if-custom-app-uploading-is-enabled)) | Your admin must turn this on — see below |
+| ☐ | `MyCompanyPolicy_1_0_0_0.zip` file downloaded from this repository | The agent package you'll upload |
+| ☐ | Your SharePoint site URL containing company policy documents | The knowledge source the agent will search |
 
 #### How to Check if Custom App Uploading Is Enabled
 
@@ -186,8 +189,11 @@ See the button? ✅ You're good to go. Don't see it? Ask your IT admin to enable
 If you can't upload a zip — or prefer to build it yourself — use **Agent Builder** in Microsoft 365 Copilot. No coding required.
 
 **Before You Begin:**
-- ☐ Access to Agent Builder at [m365.cloud.microsoft/chat](https://m365.cloud.microsoft/chat)
-- ☐ Your SharePoint site URL containing company policy documents
+
+| ✓ | What You Need | Why |
+|:-:|:--------------|:----|
+| ☐ | Access to Agent Builder at [m365.cloud.microsoft/chat](https://m365.cloud.microsoft/chat) | Where you'll build the agent from scratch |
+| ☐ | Your SharePoint site URL containing company policy documents | The knowledge source the agent will search |
 
 #### Step 1 — Open Agent Builder
 
@@ -348,11 +354,14 @@ Add these starter prompts so users see clickable quick-start buttons:
 This approach uses Git and VS Code with the **Microsoft 365 Agents Toolkit** extension. Ideal for developers who want full control, version history, or CI/CD pipelines.
 
 **Before You Begin:**
-- ☐ [Visual Studio Code](https://code.visualstudio.com/Download) installed
-- ☐ [Git](https://git-scm.com/downloads) installed
-- ☐ [Node.js v18+](https://nodejs.org/) installed
-- ☐ [M365 Agents Toolkit](https://learn.microsoft.com/microsoftteams/platform/toolkit/install-teams-toolkit) VS Code extension installed
-- ☐ Your SharePoint site URL containing company policy documents
+
+| ✓ | What You Need | Why |
+|:-:|:--------------|:----|
+| ☐ | [Visual Studio Code](https://code.visualstudio.com/Download) installed | Your code editor for this workflow |
+| ☐ | [Git](https://git-scm.com/downloads) installed | Required to clone the agent repository |
+| ☐ | [Node.js v18+](https://nodejs.org/) installed | Required by the toolkit and agent runtime |
+| ☐ | [M365 Agents Toolkit](https://learn.microsoft.com/microsoftteams/platform/toolkit/install-teams-toolkit) VS Code extension installed | VS Code extension for building and deploying M365 agents |
+| ☐ | Your SharePoint site URL containing company policy documents | The knowledge source the agent will search |
 
 #### Step 1 — Clone the Repository
 
