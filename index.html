@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M365 Agent Templates</title>
+  <meta name="description" content="Ready-to-deploy agent templates for Microsoft 365 Copilot & Copilot Studio">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='0' y='0' width='11' height='11' fill='%23f25022'/><rect x='13' y='0' width='11' height='11' fill='%237fba00'/><rect x='0' y='13' width='11' height='11' fill='%2300a4ef'/><rect x='13' y='13' width='11' height='11' fill='%23ffb900'/></svg>" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple-deep:   #1a0a3e;
+      --purple-mid:    #3b1f8e;
+      --purple-bright: #6c3ad4;
+      --purple-light:  #8b5cf6;
+      --cyan:          #38bdf8;
+      --cyan-glow:     #67e8f9;
+      --white:         #ffffff;
+      --white-soft:    rgba(255,255,255,0.85);
+      --white-muted:   rgba(255,255,255,0.55);
+      --card-bg:       rgba(255,255,255,0.06);
+      --card-border:   rgba(255,255,255,0.12);
+      --card-hover:    rgba(255,255,255,0.10);
+      --pill-bg:       rgba(255,255,255,0.08);
+      --pill-border:   rgba(255,255,255,0.20);
+      --badge-da:      #38bdf8;
+      --badge-ca:      #a78bfa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe Sans Display', 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--purple-deep);
+      color: var(--white);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Animated Background ─────────────────────────────── */
+    .bg-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(107,58,212,0.4), transparent 60%),
+        radial-gradient(ellipse 70% 50% at 80% 90%, rgba(56,189,248,0.15), transparent 50%),
+        radial-gradient(ellipse 60% 60% at 50% 50%, rgba(59,31,142,0.6), transparent 70%),
+        linear-gradient(160deg, #0f0525 0%, #1a0a3e 30%, #2d1670 60%, #1a0a3e 100%);
+    }
+
+    .bg-gradient::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle 400px at 30% 20%, rgba(139,92,246,0.12), transparent),
+        radial-gradient(circle 300px at 70% 70%, rgba(56,189,248,0.08), transparent);
+      animation: pulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse {
+      0%   { opacity: 0.6; transform: scale(1); }
+      100% { opacity: 1;   transform: scale(1.05); }
+    }
+
+    /* ── Layout ──────────────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Nav Bar ─────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      background: rgba(15,5,37,0.75);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .nav-brand svg { flex-shrink: 0; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-link {
+      color: var(--white-soft);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--pill-bg);
+      color: var(--white);
+    }
+
+    .nav-link.gh-btn {
+      background: var(--pill-bg);
+      border: 1px solid var(--pill-border);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-link.gh-btn:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    /* ── Hero Section ────────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 50px 24px 30px;
+    }
+
+    .hero-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hero-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      object-fit: cover;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .hero-icon:hover {
+      transform: translateY(-4px) scale(1.08);
+      filter: drop-shadow(0 8px 20px rgba(139,92,246,0.4));
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .accent {
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-glow) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--white-muted);
+      max-width: 640px;
+      margin: 0 auto 24px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .hero-pills {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      padding: 10px 28px;
+      background: var(--pill-bg);
+      border: 1px solid var(--pill-border);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--white-soft);
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-pill-divider {
+      margin: 0 16px;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.6rem;
+    }
+
+    /* ── Section Headings ────────────────────────────────── */
+    .section-heading {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--white-muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .btn-download-agent-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 8px 18px;
+      background: linear-gradient(135deg, var(--cyan) 0%, #a855f7 100%);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+      position: relative;
+      z-index: 2;
+    }
+    .btn-download-agent-all:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,229,255,0.3);
+    }
+    .btn-download-agent-all:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .btn-download-agent-all.highlight-pulse {
+      animation: pulse-glow 0.6s ease-in-out 3;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 2px 12px rgba(0,229,255,0.15); }
+      50% { box-shadow: 0 0 24px rgba(0,229,255,0.7); transform: scale(1.04); }
+    }
+
+    /* ── Agent Cards ─────────────────────────────────────── */
+    #agents { padding: 0 0 30px; }
+
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .agent-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px 28px 28px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .agent-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(139,92,246,0.08), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .agent-card:hover {
+      border-color: rgba(255,255,255,0.22);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25), 0 0 40px rgba(139,92,246,0.1);
+    }
+
+    .agent-card:hover::before { opacity: 1; }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+
+    .card-title-group { flex: 1; }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-title a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .card-title a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-da {
+      background: rgba(56,189,248,0.15);
+      color: var(--badge-da);
+      border: 1px solid rgba(56,189,248,0.25);
+    }
+
+    .badge-ca {
+      background: rgba(167,139,250,0.15);
+      color: var(--badge-ca);
+      border: 1px solid rgba(167,139,250,0.25);
+    }
+
+    .card-desc {
+      color: var(--white-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-assets {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .asset-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--white-muted);
+      margin-bottom: 4px;
+    }
+
+    .asset-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      color: var(--white-soft);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .asset-link:hover {
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.20);
+      color: var(--white);
+    }
+
+    .asset-link .icon { font-size: 1rem; flex-shrink: 0; }
+    .asset-link .label { flex: 1; }
+
+    .asset-link .ext {
+      font-size: 0.7rem;
+      color: var(--white-muted);
+      background: rgba(255,255,255,0.06);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .asset-link.primary-download {
+      background: linear-gradient(135deg, rgba(139,92,246,0.25), rgba(56,189,248,0.15));
+      border-color: rgba(139,92,246,0.35);
+    }
+
+    .asset-link.primary-download:hover {
+      background: linear-gradient(135deg, rgba(139,92,246,0.35), rgba(56,189,248,0.25));
+      border-color: rgba(139,92,246,0.5);
+      box-shadow: 0 4px 20px rgba(139,92,246,0.2);
+    }
+
+    /* ── Download All Banner ─────────────────────────────── */
+    .download-all {
+      text-align: center;
+      padding: 20px 24px 30px;
+    }
+
+    .download-box {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 24px 48px;
+      backdrop-filter: blur(12px);
+    }
+
+    .download-box-text {
+      text-align: left;
+    }
+
+    .download-box h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .download-box p {
+      color: var(--white-muted);
+      font-size: 0.95rem;
+      max-width: 480px;
+    }
+
+    .btn-download-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, var(--purple-bright) 0%, var(--purple-light) 100%);
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(108,58,212,0.4);
+    }
+
+    .btn-download-all:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(108,58,212,0.5);
+    }
+
+    /* ── Prerequisites Section ───────────────────────────── */
+    #prereqs { padding: 0 0 80px; }
+
+    .prereqs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .prereq-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+    }
+
+    .prereq-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .prereq-text {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--white-soft);
+    }
+
+    .prereq-text span {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--white-muted);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* ── Feedback Section ─────────────────────────────────── */
+    .feedback-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 960px;
+      margin: 0 auto 32px;
+    }
+
+    .feedback-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 32px 24px 28px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s;
+    }
+
+    .feedback-card:hover {
+      border-color: rgba(255,255,255,0.22);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+    }
+
+    .feedback-icon { font-size: 2.4rem; margin-bottom: 14px; }
+
+    .feedback-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .feedback-card p {
+      color: var(--white-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .feedback-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+
+    .bug-btn {
+      background: rgba(239,68,68,0.15);
+      border: 1px solid rgba(239,68,68,0.3);
+      color: #fca5a5;
+    }
+    .bug-btn:hover {
+      background: rgba(239,68,68,0.25);
+      border-color: rgba(239,68,68,0.5);
+      transform: translateY(-1px);
+    }
+
+    .feature-btn {
+      background: rgba(139,92,246,0.15);
+      border: 1px solid rgba(139,92,246,0.3);
+      color: #c4b5fd;
+    }
+    .feature-btn:hover {
+      background: rgba(139,92,246,0.25);
+      border-color: rgba(139,92,246,0.5);
+      transform: translateY(-1px);
+    }
+
+    .question-btn {
+      background: rgba(56,189,248,0.15);
+      border: 1px solid rgba(56,189,248,0.3);
+      color: #7dd3fc;
+    }
+    .question-btn:hover {
+      background: rgba(56,189,248,0.25);
+      border-color: rgba(56,189,248,0.5);
+      transform: translateY(-1px);
+    }
+
+    .feedback-howto {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .feedback-howto details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .feedback-howto summary {
+      padding: 18px 24px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white-soft);
+      transition: background 0.2s;
+      list-style: none;
+    }
+
+    .feedback-howto summary::-webkit-details-marker { display: none; }
+    .feedback-howto summary::before {
+      content: '▸ ';
+      transition: transform 0.2s;
+    }
+    .feedback-howto details[open] summary::before { content: '▾ '; }
+
+    .feedback-howto summary:hover { background: rgba(255,255,255,0.04); }
+
+    .howto-steps {
+      padding: 8px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .howto-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple-bright), var(--purple-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .step-text {
+      color: var(--white-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      padding-top: 4px;
+    }
+
+    .step-text strong { color: var(--white-soft); }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--white-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero { padding: 60px 16px 50px; }
+      .hero-icons { gap: 12px; }
+      .hero-icon { width: 48px; height: 48px; }
+      .agents-grid { grid-template-columns: 1fr; }
+      .nav-links .nav-link:not(.gh-btn) { display: none; }
+      .download-box { padding: 24px; flex-direction: column; text-align: center; }
+      .download-box-text { text-align: center; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    /* ── Animations ──────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .agent-card {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .agent-card:nth-child(1) { animation-delay: 0.05s; }
+    .agent-card:nth-child(2) { animation-delay: 0.10s; }
+    .agent-card:nth-child(3) { animation-delay: 0.15s; }
+    .agent-card:nth-child(4) { animation-delay: 0.20s; }
+    .agent-card:nth-child(5) { animation-delay: 0.25s; }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+
+  <!-- ── Nav ──────────────────────────────────────────────── -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="11" height="11" fill="#F25022"/>
+          <rect x="13" width="11" height="11" fill="#7FBA00"/>
+          <rect y="13" width="11" height="11" fill="#00A4EF"/>
+          <rect x="13" y="13" width="11" height="11" fill="#FFB900"/>
+        </svg>
+        M365 Agent Templates
+      </a>
+      <div class="nav-links">
+        <a href="#agents" class="nav-link">Agents</a>
+        <a href="#feedback" class="nav-link">Feedback</a>
+        <a href="https://github.com/microsoft/m365-agent-templates" class="nav-link gh-btn" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-icons">
+      <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Plan%20My%20Day/Plan%20My%20Day%20Icon.png" alt="Plan My Day" class="hero-icon" loading="lazy">
+      <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/My%20Company%20Policy/My%20Company%20Policy%20Icon.png" alt="My Company Policy" class="hero-icon" loading="lazy">
+      <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Executive%20Briefing/Executive_Briefing_Icon.png" alt="Executive Briefing" class="hero-icon" loading="lazy">
+      <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Request%20Tracker/Request%20Tracker%20Icon.png" alt="Request Tracker" class="hero-icon" loading="lazy">
+      <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Know%20My%20Customer/Know%20My%20Customer%20Icon.png" alt="Know My Customer" class="hero-icon" loading="lazy">
+    </div>
+    <h1>M365 <span class="accent">Agent Templates</span></h1>
+    <p class="hero-sub" style="white-space: nowrap;">Ready-to-deploy agent templates for Microsoft 365 Copilot &amp; Copilot Studio.</p>
+    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: -4px; margin-bottom: 18px;">Built by the Copilot Agents &amp; Platform Experiences (CAPE) team at Microsoft</p>
+    <div class="hero-pills">
+      <span class="hero-pill">📦 Download &amp; Import</span>
+      <span class="hero-pill-divider">●</span>
+      <span class="hero-pill">🚀 Pre-Built Agents</span>
+      <span class="hero-pill-divider">●</span>
+      <span class="hero-pill">📖 Setup Guides Included</span>
+    </div>
+  </section>
+
+  <!-- ── Agents Grid ──────────────────────────────────────── -->
+  <section id="agents" class="container">
+    <div class="section-heading">
+      <p style="white-space: nowrap;">Click any download link to grab individual assets, or download the full repo below.</p>
+    </div>
+
+    <div class="agents-grid">
+
+      <!-- ─ Plan My Day ──────────────────────────────── -->
+      <div class="agent-card">
+        <div class="card-header">
+          <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Plan%20My%20Day/Plan%20My%20Day%20Icon.png" alt="Plan My Day" class="card-icon">
+          <div class="card-title-group">
+            <div class="card-title"><a href="https://github.com/microsoft/m365-agent-templates/tree/main/Plan%20My%20Day#plan-my-day-agent" target="_blank">Plan My Day</a></div>
+            <span class="badge badge-da">Declarative Agent</span>
+          </div>
+        </div>
+        <p class="card-desc">Start every morning with a clear plan. Pulls your calendar, emails, and tasks — then tells you what to focus on first, what can wait, and what needs a decision now.</p>
+        <div class="card-assets">
+          <div class="asset-label">Downloads</div>
+          <a class="asset-link primary-download" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Plan%20My%20Day/PlanMyDay_v1.0.0.0.zip" target="_blank">
+            <span class="icon">📦</span><span class="label">Agent Package</span><span class="ext">.zip</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Plan%20My%20Day/Plan%20My%20Day%20Agent%20-%20Setup%20Guide.docx" target="_blank">
+            <span class="icon">📘</span><span class="label">Setup Guide</span><span class="ext">.docx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Plan%20My%20Day/Plan%20My%20Day%20Agent%20-%20Overview%20Deck.pptx" target="_blank">
+            <span class="icon">📊</span><span class="label">Overview Deck</span><span class="ext">.pptx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Plan%20My%20Day/Plan%20My%20Day%20Agent%20-%20Evaluation%20Test%20Plan.docx" target="_blank">
+            <span class="icon">🧪</span><span class="label">Evaluation Test Plan</span><span class="ext">.docx</span>
+          </a>
+        </div>
+        <button id="download-plan-my-day" class="btn-download-agent-all" data-agent="Plan My Day">⬇️ Download All Files</button>
+      </div>
+
+      <!-- ─ My Company Policy ────────────────────────── -->
+      <div class="agent-card">
+        <div class="card-header">
+          <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/My%20Company%20Policy/My%20Company%20Policy%20Icon.png" alt="My Company Policy" class="card-icon">
+          <div class="card-title-group">
+            <div class="card-title"><a href="https://github.com/microsoft/m365-agent-templates/tree/main/My%20Company%20Policy#my-company-policy-agent" target="_blank">My Company Policy</a></div>
+            <span class="badge badge-da">Declarative Agent</span>
+          </div>
+        </div>
+        <p class="card-desc">Employees get instant, accurate answers to PTO balances, expense policies, and hundreds of HR questions. All responses are sourced directly from your company's own documents.</p>
+        <div class="card-assets">
+          <div class="asset-label">Downloads</div>
+          <a class="asset-link primary-download" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/My%20Company%20Policy/MyCompanyPolicy_1_0_0_0.zip" target="_blank">
+            <span class="icon">📦</span><span class="label">Agent Package</span><span class="ext">.zip</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/My%20Company%20Policy/My%20Company%20Policy%20Agent%20-%20Setup%20Guide.docx" target="_blank">
+            <span class="icon">📘</span><span class="label">Setup Guide</span><span class="ext">.docx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/My%20Company%20Policy/My%20Company%20Policy%20Agent%20-%20Overview%20Deck.pptx" target="_blank">
+            <span class="icon">📊</span><span class="label">Overview Deck</span><span class="ext">.pptx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/My%20Company%20Policy/My%20Company%20Policy%20Agent%20-%20Evaluation%20Test%20Plan.docx" target="_blank">
+            <span class="icon">🧪</span><span class="label">Evaluation Test Plan</span><span class="ext">.docx</span>
+          </a>
+        </div>
+        <button id="download-my-company-policy" class="btn-download-agent-all" data-agent="My Company Policy">⬇️ Download All Files</button>
+      </div>
+
+      <!-- ─ Executive Briefing ───────────────────────── -->
+      <div class="agent-card">
+        <div class="card-header">
+          <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Executive%20Briefing/Executive_Briefing_Icon.png" alt="Executive Briefing" class="card-icon">
+          <div class="card-title-group">
+            <div class="card-title"><a href="https://github.com/microsoft/m365-agent-templates/tree/main/Executive%20Briefing#executive-briefing-agent" target="_blank">Executive Briefing</a></div>
+            <span class="badge badge-da">Declarative Agent</span>
+          </div>
+        </div>
+        <p class="card-desc">Walk into any leadership meeting fully prepared. Generates a concise briefing with account health, key metrics, and recommended talking points — in seconds, not hours.</p>
+        <div class="card-assets">
+          <div class="asset-label">Downloads</div>
+          <a class="asset-link primary-download" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Executive%20Briefing/ExecutiveBriefingAgent_v1.0.0.0.zip" target="_blank">
+            <span class="icon">📦</span><span class="label">Agent Package</span><span class="ext">.zip</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Executive%20Briefing/Executive%20Briefing%20Agent%20-%20Setup%20Guide.docx" target="_blank">
+            <span class="icon">📘</span><span class="label">Setup Guide</span><span class="ext">.docx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Executive%20Briefing/Executive%20Briefing%20Agent%20-%20Overview%20Deck.pptx" target="_blank">
+            <span class="icon">📊</span><span class="label">Overview Deck</span><span class="ext">.pptx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Executive%20Briefing/Executive%20Briefing%20Agent%20-%20Evaluation%20Test%20Plan.docx" target="_blank">
+            <span class="icon">🧪</span><span class="label">Evaluation Test Plan</span><span class="ext">.docx</span>
+          </a>
+        </div>
+        <button id="download-executive-briefing" class="btn-download-agent-all" data-agent="Executive Briefing">⬇️ Download All Files</button>
+      </div>
+
+      <!-- ─ Request Tracker ──────────────────────────── -->
+      <div class="agent-card">
+        <div class="card-header">
+          <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Request%20Tracker/Request%20Tracker%20Icon.png" alt="Request Tracker" class="card-icon">
+          <div class="card-title-group">
+            <div class="card-title"><a href="https://github.com/microsoft/m365-agent-templates/tree/main/Request%20Tracker#request-tracker-agent" target="_blank">Request Tracker</a></div>
+            <span class="badge badge-ca">Custom Agent</span>
+          </div>
+        </div>
+        <p class="card-desc">Turn any request into a tracked conversation— employees describe needs in plain language, and the agent logs, routes, and updates. Works across IT, HR, facilities and any intake workflow.</p>
+        <div class="card-assets">
+          <div class="asset-label">Downloads</div>
+          <a class="asset-link primary-download" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Request%20Tracker/RequestTrackerAgent_1_0_0_0.zip" target="_blank">
+            <span class="icon">📦</span><span class="label">Agent Package</span><span class="ext">.zip</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Request%20Tracker/Request%20Tracker%20Agent%20-%20Setup%20Guide.docx" target="_blank">
+            <span class="icon">📘</span><span class="label">Setup Guide</span><span class="ext">.docx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Request%20Tracker/Request%20Tracker%20Agent%20-%20Overview%20Deck.pptx" target="_blank">
+            <span class="icon">📊</span><span class="label">Overview Deck</span><span class="ext">.pptx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Request%20Tracker/Request%20Tracker%20Agent%20-%20Evaluation%20Test%20Plan.docx" target="_blank">
+            <span class="icon">🧪</span><span class="label">Evaluation Test Plan</span><span class="ext">.docx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Request%20Tracker/Request%20Tracker%20Agent%20-%20Evaluation%20Test%20Set.csv" target="_blank">
+            <span class="icon">📋</span><span class="label">Evaluation Test Set</span><span class="ext">.csv</span>
+          </a>
+        </div>
+        <button id="download-request-tracker" class="btn-download-agent-all" data-agent="Request Tracker">⬇️ Download All Files</button>
+      </div>
+
+      <!-- ─ Know My Customer ─────────────────────────── -->
+      <div class="agent-card">
+        <div class="card-header">
+          <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Know%20My%20Customer/Know%20My%20Customer%20Icon.png" alt="Know My Customer" class="card-icon">
+          <div class="card-title-group">
+            <div class="card-title"><a href="https://github.com/microsoft/m365-agent-templates/tree/main/Know%20My%20Customer#know-my-customer-agent" target="_blank">Know My Customer</a></div>
+            <span class="badge badge-ca">Custom Agent</span>
+          </div>
+        </div>
+        <p class="card-desc">Prepares a complete customer profile before every meeting — account history, engagement signals, open risks, and key contacts — so your team never walks in cold.</p>
+        <div class="card-assets">
+          <div class="asset-label">Downloads</div>
+          <a class="asset-link primary-download" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Know%20My%20Customer/KnowMyCustomer_1_0_0_0.zip" target="_blank">
+            <span class="icon">📦</span><span class="label">Agent Package</span><span class="ext">.zip</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Know%20My%20Customer/Know%20My%20Customer%20Agent%20-%20Setup%20Guide.docx" target="_blank">
+            <span class="icon">📘</span><span class="label">Setup Guide</span><span class="ext">.docx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Know%20My%20Customer/Know%20My%20Customer%20Agent%20-%20Overview%20Deck.pptx" target="_blank">
+            <span class="icon">📊</span><span class="label">Overview Deck</span><span class="ext">.pptx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Know%20My%20Customer/Know%20My%20Customer%20Agent%20-%20Evaluation%20Test%20Plan.docx" target="_blank">
+            <span class="icon">🧪</span><span class="label">Evaluation Test Plan</span><span class="ext">.docx</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Know%20My%20Customer/Know%20My%20Customer%20Agent%20-%20Evaluation%20Test%20Set.csv" target="_blank">
+            <span class="icon">📋</span><span class="label">Evaluation Test Set</span><span class="ext">.csv</span>
+          </a>
+          <a class="asset-link" href="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Know%20My%20Customer/Know%20My%20Customer%20Agent%20-%20Word%20Template.docx" target="_blank">
+            <span class="icon">📝</span><span class="label">Word Template</span><span class="ext">.docx</span>
+          </a>
+        </div>
+        <button id="download-know-my-customer" class="btn-download-agent-all" data-agent="Know My Customer">⬇️ Download All Files</button>
+      </div>
+
+    </div><!-- /agents-grid -->
+  </section>
+
+  <!-- ── Download All ─────────────────────────────────────── -->
+  <section class="download-all">
+    <div class="download-box">
+      <div class="download-box-text">
+        <h3>💡 Want everything?</h3>
+        <p>Download the entire repository as a ZIP — all agents, guides, decks, and sample files in one package.</p>
+      </div>
+      <a href="https://github.com/microsoft/m365-agent-templates/archive/refs/heads/main.zip" class="btn-download-all">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Full Repo (.zip)
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Feedback & Issues ─────────────────────────────────── -->
+  <section id="feedback" class="container" style="padding: 0 0 80px;">
+    <div class="section-heading">
+      <h2>📣 Feedback & Issues</h2>
+      <p>Found a bug? Have an idea? We'd love to hear from you — no GitHub experience needed!</p>
+    </div>
+    <div class="feedback-grid">
+      <div class="feedback-card">
+        <div class="feedback-icon">🐛</div>
+        <h3>Report a Bug</h3>
+        <p>Something not working as expected? Let us know and we'll look into it.</p>
+        <a href="https://github.com/microsoft/m365-agent-templates/issues/new?template=bug_report.yml" target="_blank" class="feedback-btn bug-btn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/></svg>
+          Report a Bug
+        </a>
+      </div>
+      <div class="feedback-card">
+        <div class="feedback-icon">💡</div>
+        <h3>Request a Feature</h3>
+        <p>Have an idea for a new agent or improvement? We'd love to hear your suggestion.</p>
+        <a href="https://github.com/microsoft/m365-agent-templates/issues/new?template=feature_request.yml" target="_blank" class="feedback-btn feature-btn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/><path d="M8 6.5a1.5 1.5 0 0 1 .744 2.805.5.5 0 0 0-.244.429v.766a.5.5 0 0 1-1 0v-.766a1.5 1.5 0 0 1 .5-2.234Z"/><circle cx="8" cy="12" r=".5"/></svg>
+          Request a Feature
+        </a>
+      </div>
+      <div class="feedback-card">
+        <div class="feedback-icon">💬</div>
+        <h3>Ask a Question</h3>
+        <p>Not sure how something works? Ask the community and our team will help.</p>
+        <a href="https://github.com/microsoft/m365-agent-templates/issues/new?title=Question%3A+&labels=question" target="_blank" class="feedback-btn question-btn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2.75C0 1.784.784 1 1.75 1h8.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 10.25 10H7.061l-2.574 2.573A1.458 1.458 0 0 1 2 11.543V10h-.25A1.75 1.75 0 0 1 0 8.25Zm1.75-.25a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h1a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h3.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25Zm11 2a.25.25 0 0 1 .25.25v5.5a.25.25 0 0 1-.25.25h-1a.75.75 0 0 0-.75.75v2.19l-2.72-2.72a.749.749 0 0 0-.53-.22H4.513a2.46 2.46 0 0 0 .487-.5h5.25a.75.75 0 0 1 .53.22l2.72 2.72V10.5a.75.75 0 0 1 .75-.75h1a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25h-1.5a.75.75 0 0 1 0-1.5h1.5c.966 0 1.75.784 1.75 1.75Z"/></svg>
+          Ask a Question
+        </a>
+      </div>
+    </div>
+    <div class="feedback-howto">
+      <details>
+        <summary>🆕 New to GitHub? Here's how to submit an issue</summary>
+        <div class="howto-steps">
+          <div class="howto-step">
+            <div class="step-num">1</div>
+            <div class="step-text"><strong>Click a button above</strong> — it will open a pre-filled form on GitHub.</div>
+          </div>
+          <div class="howto-step">
+            <div class="step-num">2</div>
+            <div class="step-text"><strong>Sign in to GitHub</strong> — if you don't have an account, you can create one for free in under a minute.</div>
+          </div>
+          <div class="howto-step">
+            <div class="step-num">3</div>
+            <div class="step-text"><strong>Fill in the form</strong> — describe what happened or what you'd like to see. Screenshots are welcome!</div>
+          </div>
+          <div class="howto-step">
+            <div class="step-num">4</div>
+            <div class="step-text"><strong>Click "Submit new issue"</strong> — our team gets notified and will respond. You'll get email updates too.</div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────────── -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <rect width="10" height="10" x="1" y="1" rx="2" fill="#F25022"/>
+          <rect width="10" height="10" x="13" y="1" rx="2" fill="#7FBA00"/>
+          <rect width="10" height="10" x="1" y="13" rx="2" fill="#00A4EF"/>
+          <rect width="10" height="10" x="13" y="13" rx="2" fill="#FFB900"/>
+        </svg>
+        Built by the Copilot Agents &amp; Platform Experiences (CAPE) team at Microsoft
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/microsoft/m365-agent-templates" target="_blank">GitHub</a>
+        <a href="https://github.com/microsoft/m365-agent-templates/issues/new?template=bug_report.yml" target="_blank">Report a Bug</a>
+        <a href="https://github.com/microsoft/m365-agent-templates/issues/new?template=feature_request.yml" target="_blank">Request a Feature</a>
+        <a href="https://github.com/microsoft/m365-agent-templates/blob/main/LICENSE" target="_blank">MIT License</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a.asset-link').forEach(link => {
+        // Remove target=_blank so preventDefault works reliably
+        link.removeAttribute('target');
+
+        link.addEventListener('click', async e => {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const url = link.getAttribute('href');
+          const filename = decodeURIComponent(url.split('/').pop());
+          const labelEl = link.querySelector('.label');
+          const origText = labelEl.textContent;
+
+          link.style.opacity = '0.5';
+          link.style.pointerEvents = 'none';
+          labelEl.textContent = 'Downloading…';
+
+          try {
+            const resp = await fetch(url);
+            if (!resp.ok) throw new Error(resp.status);
+            const blob = await resp.blob();
+            const blobUrl = URL.createObjectURL(blob);
+            const tmp = document.createElement('a');
+            tmp.href = blobUrl;
+            tmp.download = filename;
+            tmp.style.display = 'none';
+            document.body.appendChild(tmp);
+            tmp.click();
+            // Small delay so the browser registers the click
+            await new Promise(r => setTimeout(r, 150));
+            tmp.remove();
+            URL.revokeObjectURL(blobUrl);
+          } catch (err) {
+            console.warn('Download fetch failed, falling back:', err);
+            window.open(url, '_blank');
+          } finally {
+            link.style.opacity = '1';
+            link.style.pointerEvents = '';
+            labelEl.textContent = origText;
+          }
+        });
+      });
+      // ── Download All Files per agent ──
+      document.querySelectorAll('.btn-download-agent-all').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const card = btn.closest('.agent-card');
+          const agentName = btn.dataset.agent;
+          const links = card.querySelectorAll('a.asset-link');
+          const origText = btn.textContent;
+
+          btn.disabled = true;
+          btn.textContent = '⏳ Zipping files…';
+
+          try {
+            const zip = new JSZip();
+            for (const link of links) {
+              const url = link.getAttribute('href');
+              const filename = decodeURIComponent(url.split('/').pop());
+              btn.textContent = `⏳ Fetching ${filename.substring(0, 25)}…`;
+              const resp = await fetch(url);
+              if (!resp.ok) throw new Error(`Failed: ${filename}`);
+              const blob = await resp.blob();
+              zip.file(filename, blob);
+            }
+
+            btn.textContent = '⏳ Creating ZIP…';
+            const content = await zip.generateAsync({ type: 'blob' });
+            const blobUrl = URL.createObjectURL(content);
+            const tmp = document.createElement('a');
+            tmp.href = blobUrl;
+            tmp.download = `${agentName} - All Files.zip`;
+            tmp.style.display = 'none';
+            document.body.appendChild(tmp);
+            tmp.click();
+            await new Promise(r => setTimeout(r, 150));
+            tmp.remove();
+            URL.revokeObjectURL(blobUrl);
+            btn.textContent = '✅ Downloaded!';
+            setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 2000);
+          } catch (err) {
+            console.error('Zip download failed:', err);
+            btn.textContent = '❌ Failed — try individual downloads';
+            setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 3000);
+          }
+        });
+      });
+
+      // ── Hash-based auto-download for download buttons ──
+      function handleDownloadHash() {
+        const hash = window.location.hash.slice(1);
+        if (!hash.startsWith('download-')) return;
+        const btn = document.getElementById(hash);
+        if (!btn) return;
+        btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        btn.classList.add('highlight-pulse');
+        setTimeout(() => {
+          btn.click();
+        }, 800);
+      }
+      handleDownloadHash();
+      window.addEventListener('hashchange', handleDownloadHash);
+    });
+  </script>
+</body>
+</html>
