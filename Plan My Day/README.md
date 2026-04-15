@@ -77,10 +77,10 @@ For full setup and deployment instructions, refer to the **Plan My Day Agent - S
 
 | File | Description |
 |:---------|:------------|
-| [`Plan My Day Agent - Overview Deck.pptx`](Plan%20My%20Day%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview presentation with features, persona examples, user journey, architecture, and demo prompts |
-| [`Plan My Day Agent - Setup Guide.docx`](Plan%20My%20Day%20Agent%20-%20Setup%20Guide.docx) | Step-by-step deployment and configuration guide with three setup options |
-| [`Plan My Day Agent - Evaluation Test Plan.docx`](Plan%20My%20Day%20Agent%20-%20Evaluation%20Test%20Plan.docx) | Detailed evaluation test plan with 15 test scenarios and pass/fail criteria |
 | [`PlanMyDay_v1.0.0.0.zip`](PlanMyDay_v1.0.0.0.zip) | Pre-built declarative agent package ready to sideload into Teams |
+| [`Plan My Day Agent - Setup Guide.docx`](Plan%20My%20Day%20Agent%20-%20Setup%20Guide.docx) | Step-by-step deployment and configuration guide with three setup options |
+| [`Plan My Day Agent - Overview Deck.pptx`](Plan%20My%20Day%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview presentation with features, persona examples, user journey, architecture, and demo prompts |
+| [`Plan My Day Agent - Evaluation Test Plan.docx`](Plan%20My%20Day%20Agent%20-%20Evaluation%20Test%20Plan.docx) | Detailed evaluation test plan with 15 test scenarios and pass/fail criteria |
 | [`Plan My Day Icon.png`](Plan%20My%20Day%20Icon.png) | Agent icon used in Microsoft 365 Copilot and Teams |
 
 > 💡 **To download all files:** From the [repository root](https://github.com/microsoft/m365-agent-templates), click the green **Code** button and select **Download ZIP**, then extract the **Plan My Day** folder.

@@ -79,11 +79,11 @@ For full setup and deployment instructions, refer to the **Request Tracker Agent
 
 | File | Description |
 |:---------|:------------|
-| [`Request Tracker Agent - Overview Deck.pptx`](Request%20Tracker%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview with features, architecture, personas, user journey, and demo prompts |
+| [`RequestTrackerAgent_1_0_0_0.zip`](RequestTrackerAgent_1_0_0_0.zip) | Pre-built Copilot Studio solution package — import directly into your environment |
 | [`Request Tracker Agent - Setup Guide.docx`](Request%20Tracker%20Agent%20-%20Setup%20Guide.docx) | Complete setup and configuration guide with three deployment options |
+| [`Request Tracker Agent - Overview Deck.pptx`](Request%20Tracker%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview with features, architecture, personas, user journey, and demo prompts |
 | [`Request Tracker Agent - Evaluation Test Plan.docx`](Request%20Tracker%20Agent%20-%20Evaluation%20Test%20Plan.docx) | Detailed evaluation test plan with pass/fail criteria |
 | [`Request Tracker Agent - Evaluation Test Set.csv`](Request%20Tracker%20Agent%20-%20Evaluation%20Test%20Set.csv) | 10-question evaluation test set importable into Copilot Studio |
-| [`RequestTrackerAgent_1_0_0_0.zip`](RequestTrackerAgent_1_0_0_0.zip) | Pre-built Copilot Studio solution package — import directly into your environment |
 | [`Request Tracker Icon.png`](Request%20Tracker%20Icon.png) | Agent icon for Teams and Copilot Studio branding |
 | [`Eval Sets/`](Eval%20Sets/) | 7 granular CSV evaluation sets covering topic routing, create/update flows, search, edge cases, negative cases, and multi-turn conversations |
 | [`Sample Data/`](Sample%20Data/) | Sample data files including Employee FAQ and event planning data for testing |
