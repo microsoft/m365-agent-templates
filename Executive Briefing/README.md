@@ -1,5 +1,3 @@
-[← Back to Agent Templates](https://github.com/microsoft/m365-agent-templates#readme)
-
 <h1 align="center">
   <img src="Executive_Briefing_Icon.png" alt="" width="48">&nbsp;&nbsp;Executive Briefing Agent
 </h1>
