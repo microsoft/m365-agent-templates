@@ -15,7 +15,7 @@
 - [How It Works](#-how-it-works)
 - [Prerequisites](#-prerequisites)
 - [Getting Started](#-getting-started)
-- [Documents Included](#-documents-included)
+- [Files Included](#-files-included)
 - [Setup Guide](#️-setup-guide)
 
 ---
@@ -74,9 +74,9 @@ For full setup and deployment instructions, see the **[Setup Guide](#️-setup-g
 
 ---
 
-## 📦 Documents Included
+## 📦 Files Included
 
-| Document | Description |
+| File | Description |
 |:---------|:------------|
 | [`My Company Policy Agent - Overview Deck.pptx`](My%20Company%20Policy%20Agent%20-%20Overview%20Deck.pptx) | Comprehensive overview deck covering the agent scenario, architecture, personas, and demo prompts |
 | [`My Company Policy Agent - Setup Guide.docx`](My%20Company%20Policy%20Agent%20-%20Setup%20Guide.docx) | Step-by-step setup and configuration guide with three deployment options |

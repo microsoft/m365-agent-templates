@@ -18,7 +18,7 @@
 - [How It Works](#-how-it-works)
 - [Prerequisites](#-prerequisites)
 - [Getting Started](#-getting-started)
-- [Documents Included](#-documents-included)
+- [Files Included](#-files-included)
 - [Setup Guide](#%EF%B8%8F-setup-guide)
 
 ---
@@ -75,9 +75,9 @@ For full setup and deployment instructions, refer to the **Request Tracker Agent
 
 ---
 
-## 📦 Documents Included
+## 📦 Files Included
 
-| Document | Description |
+| File | Description |
 |:---------|:------------|
 | [`Request Tracker Agent - Overview Deck.pptx`](Request%20Tracker%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview with features, architecture, personas, user journey, and demo prompts |
 | [`Request Tracker Agent - Setup Guide.docx`](Request%20Tracker%20Agent%20-%20Setup%20Guide.docx) | Complete setup and configuration guide with three deployment options |

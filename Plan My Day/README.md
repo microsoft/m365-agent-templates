@@ -17,7 +17,7 @@
 - [How It Works](#-how-it-works)
 - [Prerequisites](#-prerequisites)
 - [Getting Started](#-getting-started)
-- [Documents Included](#-documents-included)
+- [Files Included](#-files-included)
 - [Setup Guide](#%EF%B8%8F-setup-guide)
 
 ---
@@ -73,9 +73,9 @@ For full setup and deployment instructions, refer to the **Plan My Day Agent - S
 
 ---
 
-## 📦 Documents Included
+## 📦 Files Included
 
-| Document | Description |
+| File | Description |
 |:---------|:------------|
 | [`Plan My Day Agent - Overview Deck.pptx`](Plan%20My%20Day%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview presentation with features, persona examples, user journey, architecture, and demo prompts |
 | [`Plan My Day Agent - Setup Guide.docx`](Plan%20My%20Day%20Agent%20-%20Setup%20Guide.docx) | Step-by-step deployment and configuration guide with three setup options |

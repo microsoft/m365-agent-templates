@@ -17,7 +17,7 @@
 - [How It Works](#-how-it-works)
 - [Prerequisites](#-prerequisites)
 - [Getting Started](#-getting-started)
-- [Documents Included](#-documents-included)
+- [Files Included](#-files-included)
 - [Setup Guide](#%EF%B8%8F-setup-guide)
 
 ---
@@ -73,9 +73,9 @@ For full setup and deployment instructions, refer to the **Executive Briefing Ag
 
 ---
 
-## 📦 Documents Included
+## 📦 Files Included
 
-| Document | Description |
+| File | Description |
 |:---------|:------------|
 | [`ExecutiveBriefingAgent_v1.0.0.0.zip`](ExecutiveBriefingAgent_v1.0.0.0.zip) | Pre-built Copilot Studio solution package — ready to import |
 | [`Executive Briefing Agent - Setup Guide.docx`](Executive%20Briefing%20Agent%20-%20Setup%20Guide.docx) | Step-by-step setup and configuration guide |

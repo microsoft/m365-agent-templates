@@ -18,7 +18,7 @@
 - [How It Works](#-how-it-works)
 - [Prerequisites](#-prerequisites)
 - [Getting Started](#-getting-started)
-- [Documents Included](#-documents-included)
+- [Files Included](#-files-included)
 - [Setup Guide](#-setup-guide)
 
 ---
@@ -74,9 +74,9 @@ For full setup and deployment instructions, refer to the **Know My Customer Agen
 
 ---
 
-## 📦 Documents Included
+## 📦 Files Included
 
-| Document | Description |
+| File | Description |
 |:---------|:------------|
 | [`Know My Customer Agent - Overview Deck.pptx`](Know%20My%20Customer%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview deck covering agent capabilities, persona examples, user journey, architecture, and demo prompts |
 | [`Know My Customer Agent - Setup Guide.docx`](Know%20My%20Customer%20Agent%20-%20Setup%20Guide.docx) | Step-by-step setup and configuration guide with three deployment options |
