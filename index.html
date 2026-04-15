@@ -269,6 +269,22 @@
       50% { box-shadow: 0 0 24px rgba(0,229,255,0.7); transform: scale(1.04); }
     }
 
+    /* ── Anchor glow ring on card ─────────────────────────── */
+    .agent-card.anchor-glow {
+      animation: card-glow-ring 0.8s ease-in-out 3;
+      outline: 2px solid transparent;
+    }
+    @keyframes card-glow-ring {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(56,189,248,0), 0 8px 32px rgba(0,0,0,0.3);
+        outline-color: transparent;
+      }
+      50% {
+        box-shadow: 0 0 0 6px rgba(56,189,248,0.4), 0 0 30px rgba(103,232,249,0.35);
+        outline-color: var(--cyan);
+      }
+    }
+
     /* ── Agent Cards ─────────────────────────────────────── */
     #agents { padding: 0 0 30px; }
 
@@ -1149,8 +1165,16 @@
         if (!hash.startsWith('download-')) return;
         const btn = document.getElementById(hash);
         if (!btn) return;
-        btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const card = btn.closest('.agent-card');
+        // Scroll the card into view
+        if (card) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.classList.add('anchor-glow');
+          card.addEventListener('animationend', () => card.classList.remove('anchor-glow'), { once: true });
+        }
         btn.classList.add('highlight-pulse');
+        btn.addEventListener('animationend', () => btn.classList.remove('highlight-pulse'), { once: true });
+        // Auto-trigger the zip download after scroll + glow
         setTimeout(() => {
           btn.click();
         }, 800);
