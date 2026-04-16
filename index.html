@@ -1133,6 +1133,11 @@
         btn.addEventListener('click', async () => {
           const card = btn.closest('.agent-card');
           const agentName = btn.dataset.agent;
+
+          // Track download click in Microsoft Clarity
+          if (typeof clarity === 'function') {
+            clarity('set', 'download_click', agentName);
+          }
           const links = card.querySelectorAll('a.asset-link');
           const origText = btn.textContent;
 
