@@ -67,7 +67,7 @@ The agent orchestrates data retrieval across Microsoft 365, evaluating what's re
 
 ## 🚀 Getting Started
 
-For full setup and deployment instructions, refer to the **Plan My Day Agent - Setup Guide.docx** included in this repository, or see the [Setup Guide](#%EF%B8%8F-setup-guide) section below.
+For full setup and deployment instructions, refer to the **Plan My Day Agent - Setup Guide.pdf** included in this repository, or see the [Setup Guide](#%EF%B8%8F-setup-guide) section below.
 
 > 💡 **To download:** From the [repository root](https://github.com/microsoft/m365-agent-templates), click the green **Code** button and select **Download ZIP**, then extract the **Plan My Day** folder.
 
@@ -78,7 +78,7 @@ For full setup and deployment instructions, refer to the **Plan My Day Agent - S
 | File | Description |
 |:---------|:------------|
 | [`PlanMyDay_v1.0.0.0.zip`](PlanMyDay_v1.0.0.0.zip) | Pre-built declarative agent package ready to sideload into Teams |
-| [`Setup Guide.docx`](Plan%20My%20Day%20Agent%20-%20Setup%20Guide.docx) | Step-by-step deployment and configuration guide with three setup options |
+| [`Setup Guide.pdf`](Plan%20My%20Day%20Agent%20-%20Setup%20Guide.pdf) | Step-by-step deployment and configuration guide with three setup options |
 | [`Overview Deck.pptx`](Plan%20My%20Day%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview presentation with features, persona examples, user journey, architecture, and demo prompts |
 | [`Evaluation Test Plan.docx`](Plan%20My%20Day%20Agent%20-%20Evaluation%20Test%20Plan.docx) | Detailed evaluation test plan with 15 test scenarios and pass/fail criteria |
 | [`Icon.png`](Plan%20My%20Day%20Icon.png) | Agent icon used in Microsoft 365 Copilot and Teams |
@@ -89,7 +89,7 @@ For full setup and deployment instructions, refer to the **Plan My Day Agent - S
 
 ## 🛠️ Setup Guide
 
-This section is generated from the **Plan My Day Agent - Setup Guide.docx** and covers three deployment options — from a quick 5-minute import to a full developer workflow.
+This section is generated from the **Plan My Day Agent - Setup Guide.pdf** and covers three deployment options — from a quick 5-minute import to a full developer workflow.
 
 ### Which Option Should I Choose?
 
