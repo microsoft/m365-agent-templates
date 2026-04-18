@@ -69,7 +69,7 @@ The agent is powered by a **Microsoft Dataverse** table as its system of record 
 
 ## 🚀 Getting Started
 
-For full setup and deployment instructions, refer to the **Request Tracker Agent - Setup Guide.docx** included in this repository.
+For full setup and deployment instructions, refer to the **Request Tracker Agent - Setup Guide.pdf** included in this repository.
 
 > 💡 **To download:** From the [repository root](https://github.com/microsoft/m365-agent-templates), click the green **Code** button and select **Download ZIP**, then extract the **Request Tracker** folder.
 
@@ -80,7 +80,7 @@ For full setup and deployment instructions, refer to the **Request Tracker Agent
 | File | Description |
 |:---------|:------------|
 | [`RequestTrackerAgent_1_0_0_0.zip`](RequestTrackerAgent_1_0_0_0.zip) | Pre-built Copilot Studio solution package — import directly into your environment |
-| [`Setup Guide.docx`](Request%20Tracker%20Agent%20-%20Setup%20Guide.docx) | Complete setup and configuration guide with three deployment options |
+| [`Setup Guide.pdf`](Request%20Tracker%20Agent%20-%20Setup%20Guide.pdf) | Complete setup and configuration guide with three deployment options |
 | [`Overview Deck.pptx`](Request%20Tracker%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview with features, architecture, personas, user journey, and demo prompts |
 | [`Evaluation Test Plan.docx`](Request%20Tracker%20Agent%20-%20Evaluation%20Test%20Plan.docx) | Detailed evaluation test plan with pass/fail criteria |
 | [`Evaluation Test Set.csv`](Request%20Tracker%20Agent%20-%20Evaluation%20Test%20Set.csv) | 10-question evaluation test set importable into Copilot Studio |
@@ -94,7 +94,7 @@ For full setup and deployment instructions, refer to the **Request Tracker Agent
 
 ## 🛠️ Setup Guide
 
-This section is generated from the **Request Tracker Agent - Setup Guide.docx** and provides three deployment options.
+This section is generated from the **Request Tracker Agent - Setup Guide.pdf** and provides three deployment options.
 
 ### Which Option Should I Choose?
 
