@@ -78,7 +78,7 @@ For full setup and deployment instructions, refer to the **Know My Customer Agen
 
 | File | Description |
 |:---------|:------------|
-| [`KnowMyCustomer_1_0_0_0.zip`](KnowMyCustomer_1_0_0_0.zip) | Pre-built Copilot Studio solution package — import directly into your environment |
+| [`KnowMyCustomer_1_0_0_1.zip`](KnowMyCustomer_1_0_0_1.zip) | Pre-built Copilot Studio solution package — import directly into your environment |
 | [`Setup Guide.docx`](Know%20My%20Customer%20Agent%20-%20Setup%20Guide.docx) | Step-by-step setup and configuration guide with three deployment options |
 | [`Overview Deck.pptx`](Know%20My%20Customer%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview deck covering agent capabilities, persona examples, user journey, architecture, and demo prompts |
 | [`Evaluation Test Plan.pdf`](Know%20My%20Customer%20Agent%20-%20Evaluation%20Test%20Plan.pdf) | Detailed evaluation test plan with 15 test scenarios and pass/fail criteria |
@@ -118,7 +118,7 @@ This is the fastest way to get started. You'll upload the pre-built solution pac
 |---|---|---|
 | ☐ | Copilot Studio access at [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com) | Where you'll import the solution |
 | ☐ | System Customizer or System Administrator security role | Required to import solutions into an environment |
-| ☐ | `KnowMyCustomer_1_0_0_0.zip` file | The solution package — do not unzip or rename it |
+| ☐ | `KnowMyCustomer_1_0_0_1.zip` file | The solution package — do not unzip or rename it |
 
 > 🔴 **Important:** Do not unzip, rename, or modify the .zip file. Copilot Studio needs the original package as-is.
 
@@ -129,7 +129,7 @@ This is the fastest way to get started. You'll upload the pre-built solution pac
 3. In the left navigation menu, click **Settings** (the gear icon ⚙️) at the bottom.
 4. Under the Settings menu, click **Solutions**. This opens the Solutions list page.
 5. Click the **Import** button at the top of the solutions list.
-6. Click **Browse**, navigate to where you saved the `KnowMyCustomer_1_0_0_0.zip` file, select it, and click **Open**.
+6. Click **Browse**, navigate to where you saved the `KnowMyCustomer_1_0_0_1.zip` file, select it, and click **Open**.
 7. Click **Next**. Copilot Studio will validate the package. If prompted about connection references (e.g., Word Online, OneDrive for Business), sign in with your Microsoft 365 account for each one.
 8. Click **Import**. The import process may take 1–3 minutes. Wait for the green success banner.
 
