@@ -81,7 +81,7 @@ For full setup and deployment instructions, see the **[Setup Guide](#️-setup-g
 | [`MyCompanyPolicy_1_0_0_0.zip`](MyCompanyPolicy_1_0_0_0.zip) | Pre-built agent package ready for sideloading into Teams |
 | [`Setup Guide.pdf`](My%20Company%20Policy%20Agent%20-%20Setup%20Guide.pdf) | Step-by-step setup and configuration guide with three deployment options |
 | [`Overview Deck.pptx`](My%20Company%20Policy%20Agent%20-%20Overview%20Deck.pptx) | Comprehensive overview deck covering the agent scenario, architecture, personas, and demo prompts |
-| [`Evaluation Test Plan.docx`](My%20Company%20Policy%20Agent%20-%20Evaluation%20Test%20Plan.docx) | Evaluation test plan with pass/fail criteria for grounding accuracy, citation behavior, and tone |
+| [`Evaluation Test Plan.pdf`](My%20Company%20Policy%20Agent%20-%20Evaluation%20Test%20Plan.pdf) | Evaluation test plan with pass/fail criteria for grounding accuracy, citation behavior, and tone |
 | [`Sample Files/`](Sample%20Files/) | Sample company policy documents for testing the agent |
 | [`Eval Sets/`](Eval%20Sets/) | Evaluation test sets for automated testing |
 
@@ -453,4 +453,4 @@ Run through these quick checks after setup to make sure everything is connected:
 
 > ⚠️ If the agent doesn't return data for a query, that's OK — it means the relevant policy document hasn't been added to the SharePoint knowledge source yet. Verify the SharePoint URL is correct and that the documents are stored there.
 
-For a deeper test, refer to the **[My Company Policy Agent - Evaluation Test Plan.docx](My%20Company%20Policy%20Agent%20-%20Evaluation%20Test%20Plan.docx)** included in this repository.
+For a deeper test, refer to the **[My Company Policy Agent - Evaluation Test Plan.pdf](My%20Company%20Policy%20Agent%20-%20Evaluation%20Test%20Plan.pdf)** included in this repository.
