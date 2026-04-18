@@ -66,7 +66,7 @@ Instead of manually hunting through intranet sites, HR portals, and internal doc
 
 ## 🚀 Getting Started
 
-For full setup and deployment instructions, see the **[Setup Guide](#️-setup-guide)** section below, or refer to the **My Company Policy Agent - Setup Guide.docx** included in this repository.
+For full setup and deployment instructions, see the **[Setup Guide](#️-setup-guide)** section below, or refer to the **My Company Policy Agent - Setup Guide.pdf** included in this repository.
 
 > 💡 **To download:** From the [repository root](https://github.com/microsoft/m365-agent-templates), click the green **Code** button and select **Download ZIP**, then extract the **My Company Policy** folder.
 
@@ -79,7 +79,7 @@ For full setup and deployment instructions, see the **[Setup Guide](#️-setup-g
 | File | Description |
 |:---------|:------------|
 | [`MyCompanyPolicy_1_0_0_0.zip`](MyCompanyPolicy_1_0_0_0.zip) | Pre-built agent package ready for sideloading into Teams |
-| [`Setup Guide.docx`](My%20Company%20Policy%20Agent%20-%20Setup%20Guide.docx) | Step-by-step setup and configuration guide with three deployment options |
+| [`Setup Guide.pdf`](My%20Company%20Policy%20Agent%20-%20Setup%20Guide.pdf) | Step-by-step setup and configuration guide with three deployment options |
 | [`Overview Deck.pptx`](My%20Company%20Policy%20Agent%20-%20Overview%20Deck.pptx) | Comprehensive overview deck covering the agent scenario, architecture, personas, and demo prompts |
 | [`Evaluation Test Plan.docx`](My%20Company%20Policy%20Agent%20-%20Evaluation%20Test%20Plan.docx) | Evaluation test plan with pass/fail criteria for grounding accuracy, citation behavior, and tone |
 | [`Sample Files/`](Sample%20Files/) | Sample company policy documents for testing the agent |
