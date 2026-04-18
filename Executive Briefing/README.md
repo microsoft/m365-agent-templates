@@ -67,7 +67,7 @@ Instead of manually stitching together information, executives simply ask Copilo
 
 ## 🚀 Getting Started
 
-For full setup and deployment instructions, refer to the **Executive Briefing Agent - Setup Guide.docx** included in this repository.
+For full setup and deployment instructions, refer to the **Executive Briefing Agent - Setup Guide.pdf** included in this repository.
 
 > 💡 **To download:** From the [repository root](https://github.com/microsoft/m365-agent-templates), click the green **Code** button and select **Download ZIP**, then extract the **Executive Briefing** folder.
 
@@ -78,7 +78,7 @@ For full setup and deployment instructions, refer to the **Executive Briefing Ag
 | File | Description |
 |:---------|:------------|
 | [`ExecutiveBriefingAgent_v1.0.0.0.zip`](ExecutiveBriefingAgent_v1.0.0.0.zip) | Pre-built Copilot Studio solution package — ready to import |
-| [`Setup Guide.docx`](Executive%20Briefing%20Agent%20-%20Setup%20Guide.docx) | Step-by-step setup and configuration guide |
+| [`Setup Guide.pdf`](Executive%20Briefing%20Agent%20-%20Setup%20Guide.pdf) | Step-by-step setup and configuration guide |
 | [`Overview Deck.pptx`](Executive%20Briefing%20Agent%20-%20Overview%20Deck.pptx) | Overview presentation with architecture, personas, and demo scenarios |
 | [`Evaluation Test Plan.pdf`](Executive%20Briefing%20Agent%20-%20Evaluation%20Test%20Plan.pdf) | Evaluation test plan with prompts and expected results |
 
