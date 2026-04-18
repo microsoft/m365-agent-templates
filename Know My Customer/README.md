@@ -81,7 +81,7 @@ For full setup and deployment instructions, refer to the **Know My Customer Agen
 | [`KnowMyCustomer_1_0_0_0.zip`](KnowMyCustomer_1_0_0_0.zip) | Pre-built Copilot Studio solution package — import directly into your environment |
 | [`Setup Guide.docx`](Know%20My%20Customer%20Agent%20-%20Setup%20Guide.docx) | Step-by-step setup and configuration guide with three deployment options |
 | [`Overview Deck.pptx`](Know%20My%20Customer%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview deck covering agent capabilities, persona examples, user journey, architecture, and demo prompts |
-| [`Evaluation Test Plan.docx`](Know%20My%20Customer%20Agent%20-%20Evaluation%20Test%20Plan.docx) | Detailed evaluation test plan with 15 test scenarios and pass/fail criteria |
+| [`Evaluation Test Plan.pdf`](Know%20My%20Customer%20Agent%20-%20Evaluation%20Test%20Plan.pdf) | Detailed evaluation test plan with 15 test scenarios and pass/fail criteria |
 | [`Evaluation Test Set.csv`](Know%20My%20Customer%20Agent%20-%20Evaluation%20Test%20Set.csv) | CSV test set importable into Copilot Studio for automated evaluation |
 | [`Word Template.docx`](Know%20My%20Customer%20Agent%20-%20Word%20Template.docx) | Word document template with content controls used by the file generation flow |
 | [`Icon.png`](Know%20My%20Customer%20Icon.png) | Agent icon (PNG) for Teams and Copilot Studio branding |
