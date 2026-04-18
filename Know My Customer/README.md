@@ -68,7 +68,7 @@ The agent operates in three phases: it first runs a multi-stage **web search pip
 
 ## 🚀 Getting Started
 
-For full setup and deployment instructions, refer to the **Know My Customer Agent - Setup Guide.docx** included in this repository.
+For full setup and deployment instructions, refer to the **Know My Customer Agent - Setup Guide.pdf** included in this repository.
 
 > 💡 **To download:** From the [repository root](https://github.com/microsoft/m365-agent-templates), click the green **Code** button and select **Download ZIP**, then extract the **Know My Customer** folder.
 
@@ -79,7 +79,7 @@ For full setup and deployment instructions, refer to the **Know My Customer Agen
 | File | Description |
 |:---------|:------------|
 | [`KnowMyCustomer_1_0_0_1.zip`](KnowMyCustomer_1_0_0_1.zip) | Pre-built Copilot Studio solution package — import directly into your environment |
-| [`Setup Guide.docx`](Know%20My%20Customer%20Agent%20-%20Setup%20Guide.docx) | Step-by-step setup and configuration guide with three deployment options |
+| [`Setup Guide.pdf`](Know%20My%20Customer%20Agent%20-%20Setup%20Guide.pdf) | Step-by-step setup and configuration guide with three deployment options |
 | [`Overview Deck.pptx`](Know%20My%20Customer%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview deck covering agent capabilities, persona examples, user journey, architecture, and demo prompts |
 | [`Evaluation Test Plan.pdf`](Know%20My%20Customer%20Agent%20-%20Evaluation%20Test%20Plan.pdf) | Detailed evaluation test plan with 15 test scenarios and pass/fail criteria |
 | [`Evaluation Test Set.csv`](Know%20My%20Customer%20Agent%20-%20Evaluation%20Test%20Set.csv) | CSV test set importable into Copilot Studio for automated evaluation |
@@ -92,7 +92,7 @@ For full setup and deployment instructions, refer to the **Know My Customer Agen
 
 ## 🛠️ Setup Guide
 
-This section is generated from the **Know My Customer Agent - Setup Guide.docx** and includes everything you need to deploy and customize the agent.
+This section is generated from the **Know My Customer Agent - Setup Guide.pdf** and includes everything you need to deploy and customize the agent.
 
 ### Which Option Should I Choose?
 
