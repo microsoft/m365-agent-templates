@@ -80,7 +80,7 @@ For full setup and deployment instructions, refer to the **Plan My Day Agent - S
 | [`PlanMyDay_v1.0.0.0.zip`](PlanMyDay_v1.0.0.0.zip) | Pre-built declarative agent package ready to sideload into Teams |
 | [`Setup Guide.pdf`](Plan%20My%20Day%20Agent%20-%20Setup%20Guide.pdf) | Step-by-step deployment and configuration guide with three setup options |
 | [`Overview Deck.pptx`](Plan%20My%20Day%20Agent%20-%20Overview%20Deck.pptx) | Scenario overview presentation with features, persona examples, user journey, architecture, and demo prompts |
-| [`Evaluation Test Plan.docx`](Plan%20My%20Day%20Agent%20-%20Evaluation%20Test%20Plan.docx) | Detailed evaluation test plan with 15 test scenarios and pass/fail criteria |
+| [`Evaluation Test Plan.pdf`](Plan%20My%20Day%20Agent%20-%20Evaluation%20Test%20Plan.pdf) | Detailed evaluation test plan with 15 test scenarios and pass/fail criteria |
 | [`Icon.png`](Plan%20My%20Day%20Icon.png) | Agent icon used in Microsoft 365 Copilot and Teams |
 
 > 💡 **To download all files:** From the [repository root](https://github.com/microsoft/m365-agent-templates), click the green **Code** button and select **Download ZIP**, then extract the **Plan My Day** folder.
@@ -395,4 +395,4 @@ Run these quick checks after setup to make sure everything is connected:
 
 > ⚠️ If the agent doesn't return data for a specific source (e.g., no Teams messages), that's OK — it only shows sections where data exists.
 >
-> 📋 For a comprehensive evaluation, see the **Plan My Day Agent - Evaluation Test Plan.docx** included in this repository.
+> 📋 For a comprehensive evaluation, see the **Plan My Day Agent - Evaluation Test Plan.pdf** included in this repository.
