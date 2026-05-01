@@ -8,6 +8,16 @@
   Built by the Copilot Agents &amp; Platform Ecosystem (CAPE) team at Microsoft
 </p>
 
+<p align="center">
+  <a href="https://appsource.microsoft.com/marketplace/apps?search=M365%20Agent%20Templates">
+    <img src="https://img.shields.io/badge/Get%20it%20from-Marketplace-7719AA?style=for-the-badge&logo=microsoft&logoColor=white" alt="Get it from the Marketplace">
+  </a>
+</p>
+
+<p align="center">
+  <strong>⚡ One-click deployment available!</strong> Skip the manual setup and <a href="https://appsource.microsoft.com/marketplace/apps?search=M365%20Agent%20Templates">install directly from the Microsoft Marketplace</a>.
+</p>
+
 ---
 
 ## 💡 What Are Agent Templates?
@@ -96,6 +106,8 @@ Surfaces a 360° customer profile by pulling together CRM data, meeting history,
 ---
 
 ## 🚀 Getting Started
+
+> ⚡ **Prefer automatic install?** [**Get it from the Marketplace**](https://appsource.microsoft.com/marketplace/apps?search=M365%20Agent%20Templates) for one-click deployment — no manual setup required.
 
 1. Click on any agent folder above
 2. Read the README for an overview of the agent
