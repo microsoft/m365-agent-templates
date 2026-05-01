@@ -9,13 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://appsource.microsoft.com/marketplace/apps?search=M365%20Agent%20Templates">
-    <img src="https://img.shields.io/badge/Get%20it%20from-Marketplace-7719AA?style=for-the-badge&logo=microsoft&logoColor=white" alt="Get it from the Marketplace">
-  </a>
-</p>
-
-<p align="center">
-  <strong>⚡ One-click deployment available!</strong> Skip the manual setup and <a href="https://appsource.microsoft.com/marketplace/apps?search=M365%20Agent%20Templates">install directly from the Microsoft Marketplace</a>.
+  <strong>⚡ Prefer one-click install?</strong> Install the full template library directly from <a href="https://appsource.microsoft.com/marketplace/apps?search=M365%20Agent%20Templates"> Microsoft Marketplace</a>.
 </p>
 
 ---
