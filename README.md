@@ -43,112 +43,92 @@ Each agent folder contains a full **Bill of Materials (BOM)**:
 <table>
 <tr>
 <td align="center" valign="middle" width="100">
-<img src="AI Learning Advisor/AI Learning Advisor.png" width="64"><br>
+<img src="AI Learning Advisor/AI Learning Advisor.png" width="64">
 </td>
-<td valign="middle">
-
-### AI Learning Advisor
+<td>
+<b>AI Learning Advisor</b><br>
 Recommends personalized learning paths, courses, and development resources based on an employee's role, skills gaps, and career goals — acting as an always-available learning coach grounded in your organization's training catalog.
-
 </td>
 </tr>
 <tr>
 <td align="center" valign="middle" width="100">
-<img src="Status Update Agent/Status Update Agent Icon.png" width="64"><br>
+<img src="Status Update Agent/Status Update Agent Icon.png" width="64">
 </td>
-<td valign="middle">
-
-### Status Update Agent
+<td>
+<b>Status Update Agent</b><br>
 Automatically compiles project status updates by synthesizing recent emails, Teams conversations, task completions, and document changes — eliminating the manual effort of writing weekly status reports.
-
 </td>
 </tr>
 <tr>
 <td align="center" valign="middle" width="100">
-<img src="SME Finder/SME Finder Icon.png" width="64"><br>
+<img src="SME Finder/SME Finder Icon.png" width="64">
 </td>
-<td valign="middle">
-
-### SME Finder
+<td>
+<b>SME Finder</b><br>
 Identifies subject matter experts across your organization by analyzing authored documents, meeting participation, Teams activity, and expertise signals — helping employees quickly find the right person for any topic.
-
 </td>
 </tr>
 <tr>
 <td align="center" valign="middle" width="100">
-<img src="Project Delta Digest/Project Delta Digest - Icon.png" width="64"><br>
+<img src="Project Delta Digest/Project Delta Digest - Icon.png" width="64">
 </td>
-<td valign="middle">
-
-### Project Delta Digest
+<td>
+<b>Project Delta Digest</b><br>
 Delivers a concise summary of what changed across your projects since your last check-in — new files, updated documents, completed tasks, and key decisions — so you never miss a beat when context-switching.
-
 </td>
 </tr>
 <tr>
 <td align="center" valign="middle" width="100">
-<img src="Personal News Digest/Personal News Digest - Icon.png" width="64"><br>
+<img src="Personal News Digest/Personal News Digest - Icon.png" width="64">
 </td>
-<td valign="middle">
-
-### Personal News Digest
+<td>
+<b>Personal News Digest</b><br>
 Curates a personalized news briefing based on your industry, role, interests, and the topics most relevant to your current projects — pulling from internal announcements and external sources into a single digest.
-
 </td>
 </tr>
 <tr>
 <td align="center" valign="middle" width="100">
-<img src="Plan My Day/Plan My Day Icon.png" width="64"><br>
+<img src="Plan My Day/Plan My Day Icon.png" width="64">
 </td>
-<td valign="middle">
-
-### Plan My Day
+<td>
+<b>Plan My Day</b><br>
 Compiles a personalized daily briefing from your calendar, email, Teams messages, files, and people signals — so you start every day knowing exactly what to focus on. Delivers a structured output at three depths: 30-Second Glance, 1-Minute Read, and Deep Read.
-
 </td>
 </tr>
 <tr>
 <td align="center" valign="middle" width="100">
-<img src="My Company Policy/My Company Policy Icon.png" width="64"><br>
+<img src="My Company Policy/My Company Policy Icon.png" width="64">
 </td>
-<td valign="middle">
-
-### My Company Policy
+<td>
+<b>My Company Policy</b><br>
 Gives employees a single, trusted conversational interface to access company policies — HR, benefits, PTO, holidays, IT, procurement, and more. Grounded in your SharePoint policy documents with inline citations and context-aware answers based on user location and role.
-
 </td>
 </tr>
 <tr>
 <td align="center" valign="middle" width="100">
-<img src="Executive Briefing/Executive_Briefing_Icon.png" width="64"><br>
+<img src="Executive Briefing/Executive_Briefing_Icon.png" width="64">
 </td>
-<td valign="middle">
-
-### Executive Briefing
+<td>
+<b>Executive Briefing</b><br>
 Prepares comprehensive executive briefings by synthesizing meeting context, attendee profiles, strategic priorities, and relevant documents into a single, structured pre-read — turning hours of manual prep into one prompt.
-
 </td>
 </tr>
 <tr>
 <td align="center" valign="middle" width="100">
-<img src="Request Tracker/Request Tracker Icon.png" width="64"><br>
+<img src="Request Tracker/Request Tracker Icon.png" width="64">
 </td>
-<td valign="middle">
-
-### Request Tracker
+<td>
+<b>Request Tracker</b><br>
 Provides a single, intelligent conversational interface to submit, track, escalate, and resolve internal requests across departments. Includes Power Automate workflows for approvals, notifications, nudges, and digests with clear visibility for team leads and managers.
-
 </td>
 </tr>
 <tr>
 <td align="center" valign="middle" width="100">
-<img src="Know My Customer/Know My Customer Icon.png" width="64"><br>
+<img src="Know My Customer/Know My Customer Icon.png" width="64">
 </td>
-<td valign="middle">
-
-### Know My Customer
+<td>
+<b>Know My Customer</b><br>
 Surfaces a 360° customer profile by pulling together CRM data, meeting history, email threads, and relevant documents — helping sellers and account managers walk into every conversation fully prepared.
-
 </td>
 </tr>
 </table>
