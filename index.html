@@ -9,6 +9,17 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wcdo56pwjo");
   </script>
+  <!-- Azure Application Insights -->
+  <script type="text/javascript" src="https://js.monitor.azure.com/scripts/b/ai.3.min.js"></script>
+  <script type="text/javascript">
+    window.appInsights = new Microsoft.ApplicationInsights.ApplicationInsights({
+      config: {
+        connectionString: "InstrumentationKey=a619b0d9-b304-4786-afa3-fe16f9ee196a;IngestionEndpoint=https://westus-0.in.applicationinsights.azure.com/;LiveEndpoint=https://westus.livediagnostics.monitor.azure.com/;ApplicationId=86e1c5c4-31fe-4d2f-8aea-3f2b51c5b421"
+      }
+    });
+    window.appInsights.loadAppInsights();
+    window.appInsights.trackPageView();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>M365 Agent Templates</title>
@@ -1231,6 +1242,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const trackAppInsightsEvent = (name, properties = {}) => {
+        try {
+          if (window.appInsights && typeof window.appInsights.trackEvent === 'function') {
+            window.appInsights.trackEvent({ name }, properties);
+          }
+        } catch (err) {
+          console.warn('App Insights trackEvent failed:', err);
+        }
+      };
+
       document.querySelectorAll('a.asset-link').forEach(link => {
         // Remove target=_blank so preventDefault works reliably
         link.removeAttribute('target');
@@ -1241,6 +1262,8 @@
 
           const url = link.getAttribute('href');
           const filename = decodeURIComponent(url.split('/').pop());
+          const card = link.closest('.agent-card');
+          const agentName = card?.querySelector('.card-title a')?.textContent?.trim() || 'Unknown Agent';
           const labelEl = link.querySelector('.label');
           const origText = labelEl.textContent;
 
@@ -1263,8 +1286,18 @@
             await new Promise(r => setTimeout(r, 150));
             tmp.remove();
             URL.revokeObjectURL(blobUrl);
+
+            trackAppInsightsEvent('FileDownload', {
+              agentName,
+              filename,
+              fileType: (filename.split('.').pop() || '').toLowerCase()
+            });
           } catch (err) {
             console.warn('Download fetch failed, falling back:', err);
+            trackAppInsightsEvent('FileDownloadFallback', {
+              agentName,
+              filename
+            });
             window.open(url, '_blank');
           } finally {
             link.style.opacity = '1';
@@ -1284,6 +1317,7 @@
             clarity('set', 'download_click', agentName);
             clarity('event', `download_${agentName.replace(/\s+/g, '_')}`);
           }
+          trackAppInsightsEvent('DownloadAllFilesStarted', { agentName });
           const links = card.querySelectorAll('a.asset-link');
           const origText = btn.textContent;
 
@@ -1314,10 +1348,18 @@
             await new Promise(r => setTimeout(r, 150));
             tmp.remove();
             URL.revokeObjectURL(blobUrl);
+            trackAppInsightsEvent('DownloadAllFilesCompleted', {
+              agentName,
+              fileCount: links.length
+            });
             btn.textContent = '✅ Downloaded!';
             setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 2000);
           } catch (err) {
             console.error('Zip download failed:', err);
+            trackAppInsightsEvent('DownloadAllFilesFailed', {
+              agentName,
+              error: String(err)
+            });
             btn.textContent = '❌ Failed — try individual downloads';
             setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 3000);
           }
@@ -1329,6 +1371,7 @@
         if (typeof clarity === 'function') {
           clarity('event', 'download_full_repo');
         }
+        trackAppInsightsEvent('DownloadFullRepo');
       });
 
       // ── Hash-based auto-download for download buttons ──
