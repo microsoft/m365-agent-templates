@@ -1140,7 +1140,7 @@
         <h3>💡 Want everything?</h3>
         <p>Download the entire repository as a ZIP — all agents, guides, decks, and sample files in one package.</p>
       </div>
-      <a href="https://github.com/microsoft/m365-agent-templates/archive/refs/heads/main.zip" class="btn-download-all">
+      <a href="https://github.com/microsoft/m365-agent-templates/archive/refs/heads/main.zip" class="btn-download-all" id="btn-download-full-repo">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Full Repo (.zip)
       </a>
@@ -1282,6 +1282,7 @@
           // Track download click in Microsoft Clarity
           if (typeof clarity === 'function') {
             clarity('set', 'download_click', agentName);
+            clarity('event', `download_${agentName.replace(/\s+/g, '_')}`);
           }
           const links = card.querySelectorAll('a.asset-link');
           const origText = btn.textContent;
@@ -1321,6 +1322,13 @@
             setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 3000);
           }
         });
+      });
+
+      // ── Full Repo Download Tracking ──
+      document.getElementById('btn-download-full-repo')?.addEventListener('click', () => {
+        if (typeof clarity === 'function') {
+          clarity('event', 'download_full_repo');
+        }
       });
 
       // ── Hash-based auto-download for download buttons ──
