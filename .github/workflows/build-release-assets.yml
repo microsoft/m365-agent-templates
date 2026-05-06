@@ -1,0 +1,114 @@
+name: Build Release Assets
+
+# Generates downloadable assets and publishes them to a rolling `latest`
+# release so download counts can be tracked via the GitHub releases API
+# (the green "Code" → "Download ZIP" button on the repo home page is not
+# tracked in telemetry, so we mirror everything here instead).
+#
+# Assets produced (21 total):
+#   - One zip per solution folder, named "<Solution-Slug>-solution.zip"
+#     (10 files, contents = everything inside that folder)
+#   - The agent solution zip(s) found inside each folder, copied as-is
+#     (10 files, original filenames preserved so version numbers stay visible)
+#   - One full source zip of the repo at HEAD: m365-agent-templates-source.zip
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'AI Learning Advisor/**'
+      - 'Executive Briefing/**'
+      - 'Know My Customer/**'
+      - 'My Company Policy/**'
+      - 'Personal News Digest/**'
+      - 'Plan My Day/**'
+      - 'Project Delta Digest/**'
+      - 'Request Tracker/**'
+      - 'SME Finder/**'
+      - 'Status Update Agent/**'
+      - '.github/workflows/build-release-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-release-assets
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _release
+
+          # Iterate over each top-level directory that represents a solution.
+          # Skip dotfiles/dirs and our staging dir.
+          shopt -s nullglob
+          for dir in */; do
+            name="${dir%/}"
+            case "$name" in
+              .github|.git|_release) continue ;;
+            esac
+
+            slug="${name// /-}"
+            echo "Packaging solution: $name -> ${slug}-solution.zip"
+
+            # Zip the entire folder contents (preserve the folder as the top
+            # level inside the archive so unzipping produces a tidy directory).
+            zip -r "_release/${slug}-solution.zip" "$name" >/dev/null
+
+            # Copy any agent solution zip(s) at the root of the folder so they
+            # are downloadable on their own with the original filename.
+            while IFS= read -r -d '' z; do
+              cp "$z" "_release/$(basename "$z")"
+              echo "  + agent zip: $(basename "$z")"
+            done < <(find "$name" -maxdepth 1 -type f -name '*.zip' -print0)
+          done
+
+          # Full repo source zip (matches what "Download ZIP" gives, minus
+          # .git, but trackable via release download counts).
+          git archive --format=zip --prefix="m365-agent-templates/" \
+            -o _release/m365-agent-templates-source.zip HEAD
+
+          echo "--- Final asset list ---"
+          ls -lh _release/
+          echo "Total: $(ls _release | wc -l) assets"
+
+      - name: Publish rolling 'latest' release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          NOTES=$(cat <<'EOF'
+          Auto-generated downloadable assets for the m365-agent-templates repository.
+
+          This release is regenerated automatically whenever any solution folder is updated on `main`. Asset URLs are stable, so they're suitable for documentation links and download telemetry.
+
+          **What's here:**
+          - `<Solution-Name>-solution.zip` — full contents of each solution folder (docs, eval plans, decks, agent zip, icons, sample data)
+          - `<AgentName>_<version>.zip` — the standalone agent/declarative solution package, copied directly from the repo so version numbers in the filename stay accurate
+          - `m365-agent-templates-source.zip` — full repo source at the latest commit
+
+          The `latest` tag is moved on every update, so always link to the asset URL (not the tag page) for stable download tracking.
+          EOF
+          )
+
+          # Recreate the rolling release so asset names stay clean.
+          gh release delete latest --yes --cleanup-tag --repo "$GITHUB_REPOSITORY" 2>/dev/null || true
+
+          gh release create latest \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Latest templates (rolling)" \
+            --notes "$NOTES" \
+            --target "$GITHUB_SHA" \
+            _release/*.zip
