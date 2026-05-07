@@ -5,12 +5,12 @@ name: Build Release Assets
 # (the green "Code" → "Download ZIP" button on the repo home page is not
 # tracked in telemetry, so we mirror everything here instead).
 #
-# Assets produced (21 total). Naming convention: lowercase, dash-separated,
-# no version numbers, slug derived from the solution folder name so the
-# solution zip and agent zip always share the same prefix.
-#   - One zip per solution folder, named "<solution-slug>-solution.zip"
+# Assets produced (21 total). Naming convention: PascalCase per word,
+# dash-separated, no version numbers. Slug derived from the solution
+# folder name so the solution zip and agent zip share the same prefix.
+#   - One zip per solution folder, named "<Solution-Slug>-Solution.zip"
 #     (10 files, contents = everything inside that folder)
-#   - The agent solution zip from each folder, renamed to "<solution-slug>-agent.zip"
+#   - The agent solution zip from each folder, renamed to "<Solution-Slug>-Agent.zip"
 #     (10 files, version numbers stripped for stable URLs)
 #   - One full source zip of the repo at HEAD: m365-agent-templates-source.zip
 
@@ -60,13 +60,20 @@ jobs:
               .github|.git|_release) continue ;;
             esac
 
-            # slug: lowercase, dashes only between words
-            slug=$(echo "$name" | tr '[:upper:]' '[:lower:]' | tr ' _' '--' | tr -s '-')
-            echo "Packaging solution: $name -> ${slug}-solution.zip"
+            # slug: PascalCase per word, dash-separated, no version numbers.
+            # Each space/underscore-separated word gets its first letter
+            # uppercased; the rest of the word is preserved (so "AI" stays "AI").
+            slug=$(echo "$name" | awk '{
+              for (i=1; i<=NF; i++) {
+                $i = toupper(substr($i,1,1)) substr($i,2)
+              }
+              print
+            }' | tr ' _' '--' | tr -s '-')
+            echo "Packaging solution: $name -> ${slug}-Solution.zip"
 
             # Zip the entire folder contents (preserve the folder as the top
             # level inside the archive so unzipping produces a tidy directory).
-            zip -r "_release/${slug}-solution.zip" "$name" >/dev/null
+            zip -r "_release/${slug}-Solution.zip" "$name" >/dev/null
 
             # Copy the agent solution zip(s) from the folder root, renaming to
             # "<slug>-agent.zip" (or "<slug>-agent-N.zip" if multiple) so the
@@ -74,9 +81,9 @@ jobs:
             i=0
             while IFS= read -r -d '' z; do
               if [ "$i" -eq 0 ]; then
-                target="${slug}-agent.zip"
+                target="${slug}-Agent.zip"
               else
-                target="${slug}-agent-${i}.zip"
+                target="${slug}-Agent-${i}.zip"
               fi
               cp "$z" "_release/${target}"
               echo "  + agent zip: $(basename "$z") -> ${target}"
@@ -106,11 +113,11 @@ jobs:
           This release is regenerated automatically whenever any solution folder is updated on `main`. Asset URLs are stable, so they're suitable for documentation links and download telemetry.
 
           **What's here:**
-          - `<solution-slug>-solution.zip` — full contents of each solution folder (docs, eval plans, decks, agent zip, icons, sample data)
-          - `<solution-slug>-agent.zip` — the standalone agent/declarative solution package, renamed to match the solution slug (no version numbers)
+          - `<Solution-Slug>-Solution.zip` — full contents of each solution folder (docs, eval plans, decks, agent zip, icons, sample data)
+          - `<Solution-Slug>-Agent.zip` — the standalone agent/declarative solution package, renamed to match the solution slug (no version numbers)
           - `m365-agent-templates-source.zip` — full repo source at the latest commit
 
-          All asset names are lowercase and dash-separated, with no version suffixes, so URLs stay stable across releases.
+          All asset names are PascalCase, dash-separated, with no version suffixes, so URLs stay stable across releases.
           EOF
           )
 
