@@ -853,7 +853,7 @@
     <div class="agents-grid">
 
       <!-- ─ AI Learning Advisor ────────────────────── -->
-      <div class="agent-card">
+      <div class="agent-card" data-agent-id="AI Learning Advisor">
         <div class="card-header">
           <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/AI%20Learning%20Advisor/AI%20Learning%20Advisor.png" alt="AI Learning Advisor" class="card-icon">
           <div class="card-title-group">
@@ -881,7 +881,7 @@
       </div>
 
       <!-- ─ Status Update Agent ───────────────────────── -->
-      <div class="agent-card">
+      <div class="agent-card" data-agent-id="Status Update Agent">
         <div class="card-header">
           <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Status%20Update%20Agent/Status%20Update%20Agent%20Icon.png" alt="Status Update Agent" class="card-icon">
           <div class="card-title-group">
@@ -909,7 +909,7 @@
       </div>
 
       <!-- ─ SME Finder ────────────────────────────────── -->
-      <div class="agent-card">
+      <div class="agent-card" data-agent-id="SME Finder">
         <div class="card-header">
           <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/SME%20Finder/SME%20Finder%20Icon.png" alt="SME Finder" class="card-icon">
           <div class="card-title-group">
@@ -937,7 +937,7 @@
       </div>
 
       <!-- ─ Project Delta Digest ──────────────────────── -->
-      <div class="agent-card">
+      <div class="agent-card" data-agent-id="Project Delta Digest">
         <div class="card-header">
           <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Project%20Delta%20Digest/Project%20Delta%20Digest%20-%20Icon.png" alt="Project Delta Digest" class="card-icon">
           <div class="card-title-group">
@@ -965,7 +965,7 @@
       </div>
 
       <!-- ─ Personal News Digest ──────────────────────── -->
-      <div class="agent-card">
+      <div class="agent-card" data-agent-id="Personal News Digest">
         <div class="card-header">
           <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Personal%20News%20Digest/Personal%20News%20Digest%20-%20Icon.png" alt="Personal News Digest" class="card-icon">
           <div class="card-title-group">
@@ -993,7 +993,7 @@
       </div>
 
       <!-- ─ Plan My Day ──────────────────────────────── -->
-      <div class="agent-card">
+      <div class="agent-card" data-agent-id="Plan My Day">
         <div class="card-header">
           <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Plan%20My%20Day/Plan%20My%20Day%20Icon.png" alt="Plan My Day" class="card-icon">
           <div class="card-title-group">
@@ -1021,7 +1021,7 @@
       </div>
 
       <!-- ─ My Company Policy ────────────────────────── -->
-      <div class="agent-card">
+      <div class="agent-card" data-agent-id="My Company Policy">
         <div class="card-header">
           <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/My%20Company%20Policy/My%20Company%20Policy%20Icon.png" alt="My Company Policy" class="card-icon">
           <div class="card-title-group">
@@ -1049,7 +1049,7 @@
       </div>
 
       <!-- ─ Executive Briefing ───────────────────────── -->
-      <div class="agent-card">
+      <div class="agent-card" data-agent-id="Executive Briefing">
         <div class="card-header">
           <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Executive%20Briefing/Executive_Briefing_Icon.png" alt="Executive Briefing" class="card-icon">
           <div class="card-title-group">
@@ -1077,7 +1077,7 @@
       </div>
 
       <!-- ─ Request Tracker ──────────────────────────── -->
-      <div class="agent-card">
+      <div class="agent-card" data-agent-id="Request Tracker">
         <div class="card-header">
           <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Request%20Tracker/Request%20Tracker%20Icon.png" alt="Request Tracker" class="card-icon">
           <div class="card-title-group">
@@ -1108,7 +1108,7 @@
       </div>
 
       <!-- ─ Know My Customer ─────────────────────────── -->
-      <div class="agent-card">
+      <div class="agent-card" data-agent-id="Know My Customer">
         <div class="card-header">
           <img src="https://raw.githubusercontent.com/microsoft/m365-agent-templates/main/Know%20My%20Customer/Know%20My%20Customer%20Icon.png" alt="Know My Customer" class="card-icon">
           <div class="card-title-group">
@@ -1263,7 +1263,7 @@
           const url = link.getAttribute('href');
           const filename = decodeURIComponent(url.split('/').pop());
           const card = link.closest('.agent-card');
-          const agentName = card?.querySelector('.card-title a')?.textContent?.trim() || 'Unknown Agent';
+          const agentName = card?.dataset?.agentId || 'Unknown Agent';
           const labelEl = link.querySelector('.label');
           const origText = labelEl.textContent;
 
@@ -1310,7 +1310,7 @@
       document.querySelectorAll('.btn-download-agent-all').forEach(btn => {
         btn.addEventListener('click', async () => {
           const card = btn.closest('.agent-card');
-          const agentName = btn.dataset.agent;
+          const agentName = card?.dataset?.agentId || btn.dataset.agent || 'Unknown Agent';
 
           // Track download click in Microsoft Clarity
           if (typeof clarity === 'function') {
