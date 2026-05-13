@@ -1,0 +1,31 @@
+name: Daily GitHub Telemetry → Kusto
+
+on:
+  schedule:
+    - cron: '0 7 * * *'   # 7:00 AM UTC daily
+  workflow_dispatch:        # manual trigger from Actions tab
+
+permissions:
+  id-token: write           # required for OIDC Azure login
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Run ingest-to-kusto.ps1
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_METRICS_TOKEN }}
+        run: ./.github/scripts/ingest-to-kusto.ps1
